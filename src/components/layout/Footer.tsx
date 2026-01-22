@@ -1,101 +1,110 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, Phone, ArrowUpRight } from "lucide-react";
+import { Linkedin, Mail, FileText, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-display font-bold text-lg">
-                  SM
-                </span>
-              </div>
-              <span className="font-display font-semibold text-lg">
-                Sanika More
+      <div className="container mx-auto px-6 py-12">
+        {/* Main CTA Section */}
+        <div className="text-center mb-12">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-muted-foreground mb-4"
+          >
+            Ready to explore my work?
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Button asChild size="lg" className="group">
+              <Link to="/projects">
+                View My Work
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <div className="flex gap-3 justify-center">
+              <Button variant="outline" size="lg" asChild>
+                <a
+                  href="/Sanika_More_Resume.pdf"
+                  download
+                  className="gap-2"
+                >
+                  <FileText className="h-4 w-4" />
+                  Resume
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a
+                  href="https://linkedin.com/in/sanikamore/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gap-2"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  LinkedIn
+                </a>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-border" />
+
+        {/* Bottom Section */}
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Brand & Role */}
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
+              <span className="text-accent-foreground font-display font-bold text-sm">
+                SM
               </span>
             </div>
-            <p className="text-muted-foreground max-w-sm mb-6">
-              Quantitative Finance graduate with hands-on experience in FP&A, 
-              financial modeling, and data-driven decision making.
-            </p>
-            <div className="flex gap-4">
-              {[
-                { icon: Linkedin, href: "https://linkedin.com/in/sanikamore/", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:sanikasa@buffalo.edu", label: "Email" },
-                { icon: Phone, href: "tel:+17163089362", label: "Phone" },
-              ].map(({ icon: Icon, href, label }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  whileHover={{ y: -2 }}
-                  className="w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-accent transition-colors"
-                  aria-label={label}
-                >
-                  <Icon size={18} />
-                </motion.a>
-              ))}
+            <div>
+              <span className="font-display font-semibold text-foreground">
+                Sanika More
+              </span>
+              <p className="text-xs text-muted-foreground">
+                Financial Analyst
+              </p>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-display font-semibold mb-4">Navigate</h4>
-            <div className="flex flex-col gap-3">
-              {["About", "Projects", "Experience", "Skills", "Contact"].map(
-                (link) => (
-                  <Link
-                    key={link}
-                    to={`/${link.toLowerCase()}`}
-                    className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group"
-                  >
-                    {link}
-                    <ArrowUpRight
-                      size={14}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity"
-                    />
-                  </Link>
-                )
-              )}
-            </div>
+          <div className="flex items-center gap-6">
+            <motion.a
+              href="mailto:sanikasa@buffalo.edu"
+              whileHover={{ y: -2 }}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Mail size={16} />
+              <span className="hidden sm:inline">sanikasa@buffalo.edu</span>
+            </motion.a>
+            <motion.a
+              href="https://linkedin.com/in/sanikamore/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -2 }}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Linkedin size={16} />
+              <span className="hidden sm:inline">LinkedIn</span>
+            </motion.a>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="font-display font-semibold mb-4">Get in Touch</h4>
-            <div className="flex flex-col gap-3 text-muted-foreground">
-              <a
-                href="mailto:sanikasa@buffalo.edu"
-                className="hover:text-foreground transition-colors"
-              >
-                sanikasa@buffalo.edu
-              </a>
-              <a
-                href="tel:+17163089362"
-                className="hover:text-foreground transition-colors"
-              >
-                +1-716-308-9362
-              </a>
-              <span>Buffalo, New York</span>
-              <span className="text-accent font-medium">Open to opportunities</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Sanika More. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Designed with precision. Built with passion.
+            © {currentYear} Sanika More
           </p>
         </div>
       </div>
