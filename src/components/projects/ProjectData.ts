@@ -1,4 +1,4 @@
-import { TrendingUp, DollarSign, BarChart3, PieChart, FileSpreadsheet, Database } from "lucide-react";
+import { TrendingUp, DollarSign, BarChart3, PieChart, FileSpreadsheet, Database, Briefcase } from "lucide-react";
 
 export interface ProjectMetric {
   label: string;
@@ -61,9 +61,9 @@ export interface Project {
   impactLabel: string;
 }
 
-export const allSkills = ["Financial Modeling", "FP&A", "Data Analytics", "Forecasting", "M&A", "Budgeting", "Variance Analysis", "Process Automation"];
-export const allTools = ["Excel", "Python", "SQL", "Power BI", "Tableau", "SAP", "VBA"];
-export const allIndustries = ["Technology", "Manufacturing", "Healthcare", "Retail", "Financial Services"];
+export const allSkills = ["Financial Modeling", "FP&A", "Data Analytics", "Forecasting", "M&A", "Budgeting", "Variance Analysis", "Process Automation", "Portfolio Optimization", "Risk Analysis"];
+export const allTools = ["Excel", "Python", "SQL", "Power BI", "Tableau", "SAP", "VBA", "Bloomberg"];
+export const allIndustries = ["Technology", "Manufacturing", "Healthcare", "Retail", "Financial Services", "Asset Management"];
 
 export const projects: Project[] = [
   {
@@ -497,5 +497,86 @@ export const projects: Project[] = [
     impactSuffix: "",
     impactPrefix: "$",
     impactLabel: "Intrinsic Value/Share"
+  },
+  {
+    id: 7,
+    slug: "portfolio-optimization",
+    title: "Portfolio Optimization & Risk Analysis",
+    category: "Asset Management",
+    skills: ["Portfolio Optimization", "Risk Analysis", "Financial Modeling", "Data Analytics"],
+    tools: ["Python", "Excel"],
+    industry: "Asset Management",
+    shortDesc: "Designed diversified portfolios across 17 asset classes using mean-variance optimization and 1,000-scenario Monte Carlo simulation.",
+    icon: Briefcase,
+    color: "from-violet-500/20 to-purple-500/20",
+    year: "2024",
+    duration: "4 weeks",
+    
+    overview: "Built a comprehensive asset allocation framework using Python to optimize a $1B institutional portfolio across 17 asset classes, stress-testing performance under 1,000 Monte Carlo scenarios over a 10-year horizon.",
+    
+    problem: {
+      title: "The Investment Challenge",
+      content: "Construct an optimal multi-asset portfolio that maximizes risk-adjusted returns while maintaining a maximum drawdown limit. The portfolio must span traditional and alternative asset classes including equities, fixed income, real estate, hedge funds, and private equity."
+    },
+    
+    approach: {
+      title: "Optimization Framework",
+      content: "Implemented mean-variance optimization using Mercer-style capital market assumptions. Applied Cholesky factorization for covariance matrix decomposition and used scipy.optimize for constrained portfolio optimization with weight bounds and target return constraints."
+    },
+    
+    analysis: {
+      title: "Monte Carlo Simulation",
+      content: "Generated 1,000 simulation scenarios across a 10-year horizon to stress-test portfolio allocations. Analyzed distribution of terminal wealth, maximum drawdown paths, and probability of achieving target returns under varying market conditions."
+    },
+    
+    outcome: {
+      title: "Optimized Allocation",
+      content: "Achieved a Sharpe ratio of 0.68 with a target return of 7.5% while maintaining maximum drawdown below 15%. The efficient frontier analysis identified optimal risk-return trade-offs across conservative, moderate, and aggressive allocation strategies."
+    },
+    
+    learnings: [
+      "Correlation assumptions significantly impact diversification benefits",
+      "Alternative assets (PE, Hedge Funds) improve risk-adjusted returns but require liquidity management",
+      "Monte Carlo simulation reveals tail risks not visible in mean-variance analysis",
+      "Python's scipy.optimize handles complex constrained optimization efficiently"
+    ],
+    
+    kpis: [
+      { label: "Sharpe Ratio", value: "0.68", trend: "up" },
+      { label: "Asset Classes", value: "17", trend: "neutral" },
+      { label: "Scenarios", value: "1,000", trend: "neutral" },
+      { label: "Max Drawdown", value: "<15%", trend: "up" }
+    ],
+    
+    chartData: [
+      { name: "US Large Cap", value: 18.5, projected: 7.67 },
+      { name: "US Small/Mid", value: 8.2, projected: 8.87 },
+      { name: "Non-US Dev", value: 12.4, projected: 7.88 },
+      { name: "Emerging Mkts", value: 6.8, projected: 9.68 },
+      { name: "Corp Bonds", value: 15.2, projected: 5.10 },
+      { name: "Govt Bonds", value: 10.5, projected: 3.77 },
+      { name: "Real Estate", value: 8.4, projected: 6.51 },
+      { name: "Private Equity", value: 12.0, projected: 10.18 },
+      { name: "Hedge Funds", value: 8.0, projected: 5.14 }
+    ],
+    
+    tableData: {
+      headers: ["Asset Class", "Weight %", "Exp. Return", "Volatility", "Sharpe"],
+      rows: [
+        { asset: "US Large Cap", weight: "18.5%", return: "7.67%", volatility: "16.0%", sharpe: "0.48" },
+        { asset: "US Small/Mid Cap", weight: "8.2%", return: "8.87%", volatility: "20.0%", sharpe: "0.44" },
+        { asset: "Non-US Developed", weight: "12.4%", return: "7.88%", volatility: "18.0%", sharpe: "0.44" },
+        { asset: "Emerging Markets", weight: "6.8%", return: "9.68%", volatility: "25.0%", sharpe: "0.39" },
+        { asset: "US Corp Bonds", weight: "15.2%", return: "5.10%", volatility: "6.5%", sharpe: "0.78" },
+        { asset: "US Govt Bonds", weight: "10.5%", return: "3.77%", volatility: "5.0%", sharpe: "0.75" },
+        { asset: "Real Estate", weight: "8.4%", return: "6.51%", volatility: "14.0%", sharpe: "0.47" },
+        { asset: "Private Equity", weight: "12.0%", return: "10.18%", volatility: "22.0%", sharpe: "0.46" }
+      ]
+    },
+    
+    impactValue: 0.68,
+    impactSuffix: "",
+    impactPrefix: "",
+    impactLabel: "Sharpe Ratio Achieved"
   }
 ];
