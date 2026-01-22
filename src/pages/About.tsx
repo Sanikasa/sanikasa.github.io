@@ -107,21 +107,25 @@ const About = () => {
                 viewport={{ once: true }}
                 className="sticky top-32"
               >
-                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-muted relative">
+                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 relative border border-accent/20">
+                  {/* Photo placeholder - replace with actual photo */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-48 h-48 rounded-full bg-accent/30 flex items-center justify-center">
-                      <span className="font-display text-6xl font-bold text-accent">SM</span>
+                    <div className="w-40 h-40 rounded-full bg-gradient-to-br from-accent/40 to-accent/20 flex items-center justify-center border-4 border-accent/30 shadow-xl">
+                      <span className="font-display text-5xl font-bold text-accent">SM</span>
                     </div>
                   </div>
+                  {/* Decorative elements */}
+                  <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-accent/10 blur-xl" />
+                  <div className="absolute bottom-8 left-8 w-24 h-24 rounded-full bg-accent/10 blur-2xl" />
                 </div>
                 
                 {/* Stats overlay */}
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   {[
-                    { value: 2, suffix: "+", label: "Years Experience" },
-                    { value: 95, suffix: "%", label: "Forecast Accuracy" },
-                    { value: 15, suffix: "+", label: "Projects" },
-                    { value: 40, suffix: "%", label: "Time Saved" },
+                    { value: 5, suffix: "", label: "Interactive Projects" },
+                    { value: 334, suffix: "", prefix: "$", label: "HD Valuation" },
+                    { value: 85, suffix: "%", label: "Time Saved" },
+                    { value: 52, suffix: "%", prefix: "+", label: "Sharpe Ratio" },
                   ].map((stat, index) => (
                     <motion.div
                       key={stat.label}
