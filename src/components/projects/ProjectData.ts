@@ -425,74 +425,77 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    slug: "dcf-valuation",
-    title: "DCF Valuation Model Suite",
-    category: "Financial Modeling",
-    skills: ["Financial Modeling", "Forecasting", "M&A"],
-    tools: ["Excel", "Python"],
-    industry: "Financial Services",
-    shortDesc: "Built comprehensive DCF model template used for 10+ investment evaluations.",
+    slug: "home-depot-valuation",
+    title: "Home Depot Equity Valuation & DCF Model",
+    category: "Equity Valuation",
+    skills: ["Financial Modeling", "Forecasting", "Data Analytics"],
+    tools: ["Excel", "Python", "Bloomberg"],
+    industry: "Retail",
+    shortDesc: "Built integrated DCF and FCFE valuation models deriving an intrinsic value of $334/share with comprehensive sensitivity analysis.",
     icon: Database,
-    color: "from-rose-500/20 to-red-500/20",
-    year: "2022",
-    duration: "2 months",
+    color: "from-orange-500/20 to-amber-500/20",
+    year: "2024",
+    duration: "3 weeks",
     
-    overview: "Creation of a robust, flexible DCF valuation template that became the standard tool for investment analysis across the organization.",
+    overview: "Comprehensive equity valuation of Home Depot (NYSE: HD) using integrated DCF and FCFE models, financial statement analysis, WACC estimation, and robust scenario/sensitivity analysis across 1,000+ cases.",
     
     problem: {
-      title: "The Challenge",
-      content: "Each analyst built valuations from scratch, leading to inconsistent methodologies, errors, and wasted time. Leadership needed a standardized, auditable approach."
+      title: "The Business Question",
+      content: "Determine the intrinsic value of Home Depot stock to assess whether the current market price represents a buying opportunity. The analysis needed to account for varying economic scenarios and margin assumptions to provide a defensible valuation range."
     },
     
     approach: {
-      title: "Strategic Approach",
-      content: "Designed a modular template with clear input sections, automatic sensitivity analysis, and built-in error checking. Created documentation and training materials."
+      title: "Analytical Framework",
+      content: "Built parallel DCF and FCFE models starting with detailed financial statement analysis. Estimated WACC using CAPM methodology with market risk premiums. Projected free cash flows over a 5-year explicit forecast period with terminal value calculation using perpetuity growth method."
     },
     
     analysis: {
-      title: "Data & Analysis",
-      content: "Researched best practices from investment banks and academic sources. Incorporated WACC calculator, terminal value options, and scenario modeling with Monte Carlo simulation."
+      title: "Valuation Methodology",
+      content: "Analyzed historical financials to project revenue growth, operating margins, and capital expenditure trends. Ran sensitivity analysis on operating margin (±200 bps) and revenue growth (±1%) across 1,000+ scenarios to stress-test valuation assumptions and quantify downside/upside risk."
     },
     
     outcome: {
-      title: "Results & Impact",
-      content: "Model adopted as the standard for all valuations. Reduced analysis time by 60% and eliminated methodology inconsistencies. Used for 10+ investment decisions totaling $500M+."
+      title: "Investment Conclusion",
+      content: "Derived base case intrinsic value of $334/share. Sensitivity analysis produced a valuation range of $282-$385, indicating the stock may be undervalued relative to fundamentals. Margin compression scenarios showed the largest impact on valuation."
     },
     
     learnings: [
-      "Good models are tools that make complex analysis accessible",
-      "Error prevention is as important as calculation accuracy",
-      "Documentation ensures model longevity beyond creator"
+      "Operating margin assumptions drive more valuation variance than revenue growth",
+      "FCFE models are particularly useful for capital-intensive retailers with stable debt structures",
+      "Scenario analysis communicates risk better than single-point estimates",
+      "Bloomberg Terminal data significantly improves model accuracy through real-time market inputs"
     ],
     
     kpis: [
-      { label: "Deals Analyzed", value: "10+", trend: "neutral" },
-      { label: "Combined Value", value: "$500M+", trend: "neutral" },
-      { label: "Time Savings", value: "60%", trend: "up" },
-      { label: "Adoption Rate", value: "100%", trend: "up" }
+      { label: "Intrinsic Value", value: "$334", change: "Base Case", trend: "neutral" },
+      { label: "Valuation Range", value: "$282-$385", trend: "neutral" },
+      { label: "Scenarios Tested", value: "1,000+", trend: "neutral" },
+      { label: "Margin Sensitivity", value: "±200bps", trend: "neutral" }
     ],
     
     chartData: [
-      { name: "Base", value: 145, projected: 145 },
-      { name: "Bull", value: 185, projected: 185 },
-      { name: "Bear", value: 105, projected: 105 },
-      { name: "Stress", value: 75, projected: 75 }
+      { name: "Bear Case", value: 282, projected: 282 },
+      { name: "Conservative", value: 308, projected: 308 },
+      { name: "Base Case", value: 334, projected: 334 },
+      { name: "Optimistic", value: 359, projected: 359 },
+      { name: "Bull Case", value: 385, projected: 385 }
     ],
     
     tableData: {
-      headers: ["Year", "Revenue ($M)", "EBITDA ($M)", "FCF ($M)", "Discount Factor", "PV ($M)"],
+      headers: ["Metric", "2024E", "2025E", "2026E", "2027E", "2028E"],
       rows: [
-        { year: "2024", revenue: 120, ebitda: 24, fcf: 18, discount: "0.91", pv: "16.4" },
-        { year: "2025", revenue: 138, ebitda: 29, fcf: 22, discount: "0.83", pv: "18.2" },
-        { year: "2026", revenue: 159, ebitda: 35, fcf: 26, discount: "0.75", pv: "19.5" },
-        { year: "2027", revenue: 183, ebitda: 42, fcf: 32, discount: "0.68", pv: "21.8" },
-        { year: "Terminal", revenue: "-", ebitda: "-", fcf: "-", discount: "-", pv: "89.3" }
+        { metric: "Revenue ($B)", "2024E": "157.4", "2025E": "162.1", "2026E": "167.0", "2027E": "172.0", "2028E": "177.2" },
+        { metric: "Operating Margin", "2024E": "14.2%", "2025E": "14.3%", "2026E": "14.4%", "2027E": "14.5%", "2028E": "14.5%" },
+        { metric: "EBIT ($B)", "2024E": "22.4", "2025E": "23.2", "2026E": "24.0", "2027E": "24.9", "2028E": "25.7" },
+        { metric: "Free Cash Flow ($B)", "2024E": "14.8", "2025E": "15.4", "2026E": "16.1", "2027E": "16.8", "2028E": "17.5" },
+        { metric: "Discount Factor", "2024E": "0.92", "2025E": "0.84", "2026E": "0.77", "2027E": "0.71", "2028E": "0.65" },
+        { metric: "PV of FCF ($B)", "2024E": "13.6", "2025E": "12.9", "2026E": "12.4", "2027E": "11.9", "2028E": "11.4" }
       ]
     },
     
-    impactValue: 500,
-    impactSuffix: "M+",
+    impactValue: 334,
+    impactSuffix: "",
     impactPrefix: "$",
-    impactLabel: "Deals Valued"
+    impactLabel: "Intrinsic Value/Share"
   }
 ];
