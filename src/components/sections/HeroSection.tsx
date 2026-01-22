@@ -1,7 +1,8 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight, Briefcase, TrendingUp, BarChart3, PieChart, DollarSign } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { CandlestickChart, MiniLineChart, PieChartWidget, DataStream } from "@/components/ui/FinanceGraphics";
 
 // Animated data line component
 const DataLine = ({ delay, duration, startX, startY, endX, endY }: {
@@ -87,6 +88,76 @@ const AnimatedHeadline = ({ text }: { text: string }) => {
     </motion.h1>
   );
 };
+
+// Floating Finance Dashboard Widget
+const FloatingDashboard = ({ className = "" }: { className?: string }) => (
+  <motion.div
+    className={`absolute hidden lg:block ${className}`}
+    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+    animate={{ opacity: 1, scale: 1, y: 0 }}
+    transition={{ delay: 1.5, duration: 0.8 }}
+  >
+    <motion.div
+      className="p-4 rounded-2xl border border-accent/20 bg-card/80 backdrop-blur-xl shadow-2xl"
+      animate={{ y: [0, -8, 0] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+    >
+      <div className="flex items-center gap-2 mb-3">
+        <TrendingUp className="w-4 h-4 text-accent" />
+        <span className="text-xs font-semibold text-foreground">Portfolio Performance</span>
+      </div>
+      <MiniLineChart className="w-40 h-20" />
+      <div className="flex justify-between mt-2 text-xs">
+        <span className="text-muted-foreground">YTD Return</span>
+        <span className="text-accent font-semibold">+24.8%</span>
+      </div>
+    </motion.div>
+  </motion.div>
+);
+
+// Candlestick Dashboard Widget
+const CandlestickWidget = ({ className = "" }: { className?: string }) => (
+  <motion.div
+    className={`absolute hidden lg:block ${className}`}
+    initial={{ opacity: 0, scale: 0.8, y: -20 }}
+    animate={{ opacity: 1, scale: 1, y: 0 }}
+    transition={{ delay: 1.8, duration: 0.8 }}
+  >
+    <motion.div
+      className="p-4 rounded-2xl border border-accent/20 bg-card/80 backdrop-blur-xl shadow-2xl"
+      animate={{ y: [0, 6, 0] }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+    >
+      <div className="flex items-center gap-2 mb-3">
+        <BarChart3 className="w-4 h-4 text-accent" />
+        <span className="text-xs font-semibold text-foreground">Market Analysis</span>
+      </div>
+      <CandlestickChart className="w-44 h-24" />
+    </motion.div>
+  </motion.div>
+);
+
+// Allocation Pie Widget
+const AllocationWidget = ({ className = "" }: { className?: string }) => (
+  <motion.div
+    className={`absolute hidden lg:block ${className}`}
+    initial={{ opacity: 0, scale: 0.8 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ delay: 2.1, duration: 0.8 }}
+  >
+    <motion.div
+      className="p-4 rounded-2xl border border-accent/20 bg-card/80 backdrop-blur-xl shadow-2xl"
+      animate={{ y: [0, -6, 0] }}
+      transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+    >
+      <div className="flex items-center gap-2 mb-2">
+        <PieChart className="w-4 h-4 text-accent" />
+        <span className="text-xs font-semibold text-foreground">Allocation</span>
+      </div>
+      <PieChartWidget className="w-20 h-20" />
+    </motion.div>
+  </motion.div>
+);
 
 export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -175,6 +246,16 @@ export const HeroSection = () => {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
 
+      {/* Floating Finance Dashboard Widgets */}
+      <FloatingDashboard className="top-[15%] left-[5%]" />
+      <CandlestickWidget className="top-[20%] right-[3%]" />
+      <AllocationWidget className="bottom-[25%] left-[8%]" />
+
+      {/* Data Stream on right edge */}
+      <div className="absolute right-0 top-1/4 bottom-1/4 w-32 overflow-hidden opacity-30 hidden xl:block">
+        <DataStream />
+      </div>
+
       {/* Gradient orbs */}
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
@@ -214,16 +295,16 @@ export const HeroSection = () => {
             </span>
           </motion.div>
 
-          {/* Animated headline */}
+          {/* Animated headline - Action Oriented */}
           <div className="mb-6">
-            <AnimatedHeadline text="Turning Financial Data" />
+            <AnimatedHeadline text="I Build Models." />
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.6 }}
             >
               <span className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gradient-gold">
-                into Strategic Decisions
+                You Build Confidence.
               </span>
             </motion.div>
           </div>
