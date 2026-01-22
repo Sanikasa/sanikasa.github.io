@@ -108,7 +108,7 @@ const About = () => {
                 viewport={{ once: true }}
                 className="sticky top-32"
               >
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 relative border border-accent/20 shadow-2xl">
+                <div className="aspect-[3/4] max-w-sm rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 relative border border-accent/20 shadow-2xl">
                   <img 
                     src={professionalPhoto} 
                     alt="Sanika More - Professional Photo" 
