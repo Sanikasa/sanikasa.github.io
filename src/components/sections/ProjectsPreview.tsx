@@ -11,14 +11,14 @@ export const ProjectsPreview = () => {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-b from-navy via-navy-light to-navy overflow-hidden">
-      {/* Rich backgrounds */}
-      <DataMatrixBackground className="opacity-40" />
-      <GeometricGradientBackground variant="emerald" className="opacity-40" />
+    <section className="relative py-24 md:py-32 bg-gradient-to-b from-lavender/15 via-mint/10 to-peach/15 overflow-hidden">
+      {/* Light backgrounds */}
+      <DataMatrixBackground className="opacity-20" />
+      <GeometricGradientBackground variant="lavender" className="opacity-30" />
       
-      {/* Gradient orbs */}
-      <div className="absolute top-20 right-20 w-96 h-96 bg-emerald/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple/10 rounded-full blur-3xl" />
+      {/* Soft gradient orbs */}
+      <div className="absolute top-20 right-20 w-96 h-96 bg-mint/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-80 h-80 bg-lavender/20 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading

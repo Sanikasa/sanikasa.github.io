@@ -256,16 +256,21 @@ export const HeroSection = () => {
         <DataStream />
       </div>
 
-      {/* Gradient orbs */}
+      {/* Soft gradient orbs */}
       <motion.div
-        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+        animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.3, 0.15] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-lavender/30 blur-3xl"
       />
       <motion.div
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.05, 0.15, 0.05] }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.25, 0.1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl"
+        className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-mint/25 blur-3xl"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.2, 0.1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-peach/20 blur-3xl"
       />
 
       {/* Main content with parallax */}

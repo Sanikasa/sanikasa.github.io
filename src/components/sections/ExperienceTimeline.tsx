@@ -33,11 +33,11 @@ const experiences = [
 
 export const ExperienceTimeline = () => {
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-b from-background via-card to-background overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-gradient-to-b from-peach/10 via-background to-sky/10 overflow-hidden">
       {/* Background */}
-      <GeometricGradientBackground variant="gold" className="opacity-30" />
-      <div className="absolute top-20 left-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple/10 rounded-full blur-3xl" />
+      <GeometricGradientBackground variant="gold" className="opacity-25" />
+      <div className="absolute top-20 left-20 w-72 h-72 bg-peach/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-lavender/15 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading

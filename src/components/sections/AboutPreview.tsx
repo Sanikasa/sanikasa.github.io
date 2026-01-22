@@ -172,16 +172,18 @@ export const AboutPreview = () => {
     <section ref={containerRef} className="relative py-24 md:py-32 bg-gradient-to-b from-background via-card to-background overflow-hidden">
       {/* Rich animated backgrounds */}
       <TradingChartBackground className="opacity-20" />
-      <GeometricGradientBackground variant="purple" className="opacity-30" />
+      {/* Light pastel backgrounds */}
+      <TradingChartBackground className="opacity-15" />
+      <GeometricGradientBackground variant="lavender" className="opacity-40" />
       
-      {/* Animated parallax orbs */}
+      {/* Animated parallax orbs - soft pastels */}
       <motion.div
         style={{ y: backgroundY }}
         className="absolute inset-0 pointer-events-none"
       >
-        <div className="absolute top-1/4 left-10 w-72 h-72 bg-purple/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-emerald/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-10 w-72 h-72 bg-lavender/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-mint/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-peach/15 rounded-full blur-3xl" />
       </motion.div>
 
       <div className="container mx-auto px-6 relative z-10">

@@ -107,11 +107,11 @@ const SkillBarPreview = ({ skill, delay }: { skill: Skill; delay: number }) => {
 
 export const SkillsPreview = () => {
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-b from-card via-background to-card overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-gradient-to-b from-mint/10 via-background to-lavender/10 overflow-hidden">
       {/* Background */}
-      <NetworkGridBackground className="opacity-30" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-emerald/10 rounded-full blur-3xl" />
+      <NetworkGridBackground className="opacity-15" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-lavender/15 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-mint/15 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading

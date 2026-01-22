@@ -7,39 +7,39 @@ const credentials = [
     icon: GraduationCap,
     value: "MS Quant Finance & Fintech",
     label: "University at Buffalo",
-    color: "from-purple/20 to-purple/5",
+    color: "from-lavender/40 to-lavender/20",
   },
   {
     icon: TrendingUp,
     value: "$334/share",
     label: "Home Depot Valuation",
-    color: "from-emerald/20 to-emerald/5",
+    color: "from-mint/40 to-mint/20",
   },
   {
     icon: BarChart3,
     value: "+52%",
     label: "Sharpe Improvement",
-    color: "from-accent/20 to-accent/5",
+    color: "from-peach/40 to-peach/20",
   },
   {
     icon: PieChart,
     value: "85%",
     label: "Process Time Saved",
-    color: "from-purple/20 to-purple/5",
+    color: "from-sky/40 to-sky/20",
   },
   {
     icon: Award,
-    value: "5",
+    value: "6",
     label: "Interactive Projects",
-    color: "from-emerald/20 to-emerald/5",
+    color: "from-lavender/40 to-lavender/20",
   },
 ];
 
 export const CredibilityStrip = () => {
   return (
-    <section className="relative py-10 bg-gradient-to-r from-navy via-navy-light to-navy border-y border-accent/20 overflow-hidden">
+    <section className="relative py-10 bg-gradient-to-r from-lavender/10 via-mint/10 to-peach/10 border-y border-lavender/20 overflow-hidden">
       {/* Animated background */}
-      <NetworkGridBackground className="opacity-40" />
+      <NetworkGridBackground className="opacity-20" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6">

@@ -61,9 +61,9 @@ export interface Project {
   impactLabel: string;
 }
 
-export const allSkills = ["Financial Modeling", "FP&A", "Data Analytics", "Forecasting", "Budgeting", "Variance Analysis", "Process Automation", "Strategic Finance", "AI Development", "DCF Valuation", "Fixed Income", "Portfolio Optimization", "Equity Research"];
-export const allTools = ["Excel", "Power BI", "Tableau", "M365 Copilot", "Python", "SQL", "Bloomberg Terminal"];
-export const allIndustries = ["Technology", "Financial Services", "Startups", "Retail", "Investment Management"];
+export const allSkills = ["Financial Modeling", "FP&A", "Data Analytics", "Forecasting", "Budgeting", "Variance Analysis", "Process Automation", "Strategic Finance", "AI Development", "DCF Valuation", "Fixed Income", "Portfolio Optimization", "Equity Research", "Growth Investing", "Risk Analytics"];
+export const allTools = ["Excel", "Power BI", "Tableau", "M365 Copilot", "Python", "SQL", "Bloomberg Terminal", "StockTrak"];
+export const allIndustries = ["Technology", "Financial Services", "Startups", "Retail", "Investment Management", "Consumer Discretionary"];
 
 export const projects: Project[] = [
   // ============ HOME DEPOT VALUATION PROJECT ============
@@ -443,5 +443,84 @@ export const projects: Project[] = [
     impactSuffix: "%",
     impactPrefix: "",
     impactLabel: "Time Savings Achieved"
+  },
+  
+  // ============ STOCKTRACK PORTFOLIO PROJECT ============
+  {
+    id: 6,
+    slug: "stocktrack-growth-portfolio",
+    title: "StockTrack Growth Equity Portfolio",
+    category: "Portfolio Management",
+    skills: ["Growth Investing", "Equity Research", "Risk Analytics", "Portfolio Optimization"],
+    tools: ["Bloomberg Terminal", "StockTrak", "Excel"],
+    industry: "Investment Management",
+    shortDesc: "Managed a growth-focused equity portfolio targeting S&P 500 outperformance, with Bloomberg PORT analytics for risk monitoring and sector allocation.",
+    icon: BarChart3,
+    color: "from-teal-500/20 to-cyan-500/20",
+    year: "2025",
+    duration: "1 semester",
+    
+    overview: "Built and managed a growth-focused equity portfolio with the objective of outperforming the SPDR S&P 500 ETF benchmark. Strategy focused on high earnings quality, innovation-driven growth, and strong balance sheets in technology and consumer discretionary sectors.",
+    
+    problem: {
+      title: "The Portfolio Challenge",
+      content: "Constructing a portfolio that could outperform the S&P 500 while maintaining a coherent growth strategy. The challenge was balancing high-growth, high-beta positions with defensive holdings to manage overall portfolio volatility."
+    },
+    
+    approach: {
+      title: "Growth Strategy Execution",
+      content: "Implemented conscious overweight in Information Technology (34.13%) and Consumer Discretionary (49.32%). Selected large-cap growth companies like Apple, Microsoft, Tesla, NVIDIA, Amazon, MercadoLibre, and LVMH. Added defensive positions in Pfizer, Procter & Gamble, and Coca-Cola for ballast."
+    },
+    
+    analysis: {
+      title: "Risk & Performance Analytics",
+      content: "Used Bloomberg PORT to validate strategy execution. Portfolio P/E (29.95) significantly exceeded benchmark (24.31), and ROE was double the benchmark (31.37% vs 15.58%), confirming investment in profit-retaining, faster-growing businesses. Analyzed sector allocation, valuation multiples, and risk metrics."
+    },
+    
+    outcome: {
+      title: "Results & Learnings",
+      content: "Portfolio returned -6.52% vs S&P 500's +9% over the simulation period. Top contributors: MercadoLibre (+12.32%), Pfizer (+7.12%). Top detractors: LVMH (-22.43%), Lululemon (-25.65%), UnitedHealth (-22.14%). Stock-specific risks in discretionary and healthcare caused underperformance despite sound strategy."
+    },
+    
+    learnings: [
+      "Higher P/E and ROE confirm growth strategy was executed correctly",
+      "Stock-specific risks can override sector thesis",
+      "Defensive positions provided valuable ballast during volatility",
+      "Longer investment horizons may validate growth thesis",
+      "Bloomberg PORT essential for real-time risk monitoring"
+    ],
+    
+    kpis: [
+      { label: "Portfolio P/E", value: "29.95", change: "+5.64 vs benchmark", trend: "up" },
+      { label: "Portfolio ROE", value: "31.37%", change: "+15.79% vs benchmark", trend: "up" },
+      { label: "Tech Allocation", value: "34.13%", trend: "neutral" },
+      { label: "Consumer Disc.", value: "49.32%", trend: "neutral" }
+    ],
+    
+    chartData: [
+      { name: "MELI", value: 12.32, projected: 10 },
+      { name: "PFE", value: 7.12, projected: 5 },
+      { name: "SPY", value: 9.10, projected: 8 },
+      { name: "LULU", value: -25.65, projected: 15 },
+      { name: "LVMH", value: -22.43, projected: 12 },
+      { name: "UNH", value: -22.14, projected: 8 }
+    ],
+    
+    tableData: {
+      headers: ["Metric", "Portfolio", "Benchmark", "Difference"],
+      rows: [
+        { metric: "Div Yield", portfolio: "0.90%", benchmark: "1.62%", difference: "-0.72%" },
+        { metric: "P/E Ratio", portfolio: "29.95", benchmark: "24.31", difference: "+5.64" },
+        { metric: "P/CF", portfolio: "23.85", benchmark: "18.76", difference: "+5.08" },
+        { metric: "P/B Ratio", portfolio: "8.88", benchmark: "4.71", difference: "+4.17" },
+        { metric: "ROE", portfolio: "31.37%", benchmark: "15.58%", difference: "+15.79%" },
+        { metric: "Debt/Equity", portfolio: "114.09", benchmark: "103.23", difference: "+10.86" }
+      ]
+    },
+    
+    impactValue: 31.37,
+    impactSuffix: "%",
+    impactPrefix: "",
+    impactLabel: "Portfolio ROE"
   }
 ];
