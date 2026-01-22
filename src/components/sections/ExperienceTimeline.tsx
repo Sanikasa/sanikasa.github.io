@@ -5,24 +5,24 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const experiences = [
   {
-    period: "2021 - Present",
-    role: "Senior Financial Analyst",
-    company: "Global Corp",
-    description: "Leading financial planning and analysis for a $2B business unit",
+    period: "2023",
+    role: "Finance Intern",
+    company: "Mintskill HR Solutions",
+    description: "Performed variance analysis, built automated dashboards, improved forecast accuracy by 10%, and recovered 6-8% in excess vendor payments.",
     current: true,
   },
   {
-    period: "2018 - 2021",
-    role: "Financial Analyst",
-    company: "Tech Finance Inc",
-    description: "Managed budgeting, forecasting, and variance analysis",
+    period: "2024 - 2026",
+    role: "MS Quantitative Finance",
+    company: "University at Buffalo",
+    description: "Building DCF/FCFE models, portfolio optimization, fixed income analysis, and Python for finance.",
     current: false,
   },
   {
-    period: "2016 - 2018",
-    role: "Junior Accountant",
-    company: "Accounting Partners",
-    description: "Financial reporting and audit preparation",
+    period: "2021 - 2024",
+    role: "B.Com Financial Accounting",
+    company: "University of Mumbai",
+    description: "Strong foundation in accounting principles, financial statements, and audit procedures.",
     current: false,
   },
 ];
