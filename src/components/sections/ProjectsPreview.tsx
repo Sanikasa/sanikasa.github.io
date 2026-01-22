@@ -6,19 +6,19 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { projects } from "@/components/projects/ProjectData";
 
 export const ProjectsPreview = () => {
-  // Show first 3 projects
-  const featuredProjects = projects.slice(0, 3);
+  // Show all projects (now only real ones)
+  const featuredProjects = projects;
 
   return (
     <section className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-6">
         <SectionHeading
-          eyebrow="Featured Projects"
-          title="Work That Speaks for Itself"
-          description="Interactive case studies showcasing financial analysis, modeling, and strategic planning. Click any project to explore the full story."
+          eyebrow="Featured Work"
+          title="Proven Business Impact"
+          description="Real projects with measurable outcomes. Each case study demonstrates my ability to drive strategic decisions through financial analysis and data-driven insights."
         />
 
-        <div className="grid md:grid-cols-3 gap-6 mt-16">
+        <div className={`grid ${featuredProjects.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 'md:grid-cols-3'} gap-6 mt-16`}>
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}

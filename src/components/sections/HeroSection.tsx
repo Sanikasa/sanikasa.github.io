@@ -228,14 +228,26 @@ export const HeroSection = () => {
             </motion.div>
           </div>
 
+          {/* Value proposition - clear within 5 seconds */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1.0 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+          >
+            Finance graduate with hands-on FP&A experience driving{" "}
+            <span className="text-accent font-semibold">measurable business impact</span>{" "}
+            through variance analysis, financial modeling, and process automation.
+          </motion.p>
+
           {/* Subheadline with staggered reveal */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.2 }}
-            className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-base sm:text-lg text-muted-foreground mb-12"
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base text-muted-foreground mb-12"
           >
-            {["Finance & Accounting Graduate", "Financial Modeling", "FP&A", "Data Analytics"].map((item, i) => (
+            {["MS Finance – UB", "FP&A", "Variance Analysis", "Financial Modeling"].map((item, i) => (
               <motion.span
                 key={item}
                 initial={{ opacity: 0, y: 10 }}
@@ -243,8 +255,8 @@ export const HeroSection = () => {
                 transition={{ delay: 1.4 + i * 0.1 }}
                 className="flex items-center"
               >
-                {i > 0 && <span className="mr-2 sm:mr-4 text-accent">|</span>}
-                <span className="whitespace-nowrap">{item}</span>
+                {i > 0 && <span className="mr-2 sm:mr-4 text-accent">•</span>}
+                <span className="whitespace-nowrap font-medium">{item}</span>
               </motion.span>
             ))}
           </motion.div>
