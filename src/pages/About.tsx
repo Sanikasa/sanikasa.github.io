@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { GridPattern } from "@/components/ui/GridPattern";
 import { Award, BookOpen, Target, Users, CheckCircle2, GraduationCap } from "lucide-react";
+import professionalPhoto from "@/assets/professional-photo.jpg";
 
 const values = [
   {
@@ -107,16 +108,14 @@ const About = () => {
                 viewport={{ once: true }}
                 className="sticky top-32"
               >
-                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 relative border border-accent/20">
-                  {/* Photo placeholder - replace with actual photo */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-40 h-40 rounded-full bg-gradient-to-br from-accent/40 to-accent/20 flex items-center justify-center border-4 border-accent/30 shadow-xl">
-                      <span className="font-display text-5xl font-bold text-accent">SM</span>
-                    </div>
-                  </div>
-                  {/* Decorative elements */}
-                  <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-accent/10 blur-xl" />
-                  <div className="absolute bottom-8 left-8 w-24 h-24 rounded-full bg-accent/10 blur-2xl" />
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 relative border border-accent/20 shadow-2xl">
+                  <img 
+                    src={professionalPhoto} 
+                    alt="Sanika More - Professional Photo" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                  {/* Decorative overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-transparent to-transparent" />
                 </div>
                 
                 {/* Stats overlay */}
