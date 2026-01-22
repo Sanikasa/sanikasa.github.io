@@ -4,26 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GridPattern } from "@/components/ui/GridPattern";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GraduationCap } from "lucide-react";
-import { ExperienceCard, type ExperienceData } from "@/components/experience/ExperienceCard";
-
-const experiences: ExperienceData[] = [
-  {
-    period: "2023",
-    role: "Finance Intern",
-    company: "Mintskill HR Solutions",
-    location: "India",
-    current: false,
-    challenge: "Manual budget tracking processes were causing delayed variance detection, resulting in missed cost optimization opportunities and reactive rather than proactive financial management.",
-    built: "Developed automated variance analysis dashboards and forecasting models in Excel. Created standardized reporting templates that enabled real-time budget monitoring across departments.",
-    impact: "Identified 6-8% excess vendor payments for recovery. Improved forecast accuracy by 10%. Transformed FP&A function from reactive to proactive financial management.",
-    metrics: [
-      { value: 8, suffix: "%", label: "Payments Recovered" },
-      { value: 10, suffix: "%", label: "Forecast Accuracy Gain" },
-      { value: 40, suffix: "%", label: "Reporting Time Saved" },
-      { value: 3, suffix: "+", label: "Dashboards Built" }
-    ]
-  }
-];
+import { WorkExperienceSection } from "@/components/experience/WorkExperienceSection";
 
 const education = [
   {
@@ -41,7 +22,6 @@ const education = [
 ];
 
 const certifications = [
-  { name: "Chartered Accountant (CA)", status: "In Progress" },
   { name: "Bloomberg Market Concepts", status: "Completed" },
 ];
 
@@ -85,20 +65,8 @@ const Experience = () => {
           </div>
         </section>
 
-        {/* Timeline */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto space-y-12">
-              {experiences.map((exp, index) => (
-                <ExperienceCard 
-                  key={exp.period} 
-                  experience={exp} 
-                  index={index} 
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Work Experience Section */}
+        <WorkExperienceSection />
 
         {/* Education & Certifications */}
         <section className="py-24 bg-card">
