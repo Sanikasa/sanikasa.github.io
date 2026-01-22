@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, FileText, ArrowRight } from "lucide-react";
+import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -32,30 +32,17 @@ export const Footer = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <div className="flex gap-3 justify-center">
-              <Button variant="outline" size="lg" asChild>
-                <a
-                  href="/Sanika_More_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gap-2"
-                >
-                  <FileText className="h-4 w-4" />
-                  Resume
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a
-                  href="https://linkedin.com/in/sanikamore/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gap-2"
-                >
-                  <Linkedin className="h-4 w-4" />
-                  LinkedIn
-                </a>
-              </Button>
-            </div>
+            <Button variant="outline" size="lg" asChild>
+              <a
+                href="https://linkedin.com/in/sanikamore/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gap-2"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+              </a>
+            </Button>
           </motion.div>
         </div>
 
