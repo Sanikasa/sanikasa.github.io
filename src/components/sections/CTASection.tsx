@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Calendar } from "lucide-react";
+import { ArrowRight, Mail, Download, Linkedin } from "lucide-react";
 
 export const CTASection = () => {
   return (
@@ -38,9 +38,9 @@ export const CTASection = () => {
             transition={{ delay: 0.1 }}
             className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6"
           >
-            Ready to Elevate Your
+            Ready to Bring Data-Driven
             <br />
-            <span className="text-gradient-gold">Financial Strategy?</span>
+            <span className="text-gradient-gold">Insights to Your Team?</span>
           </motion.h2>
 
           <motion.p
@@ -50,9 +50,9 @@ export const CTASection = () => {
             transition={{ delay: 0.2 }}
             className="text-lg text-primary-foreground/70 mb-10 max-w-xl mx-auto"
           >
-            I'm currently exploring new opportunities where I can leverage my 
-            expertise to drive meaningful financial outcomes. Let's discuss how 
-            I can contribute to your organization's success.
+            I'm actively seeking FP&A and Financial Analyst opportunities where I can 
+            apply my analytical skills and contribute to strategic decision-making. 
+            Let's discuss how I can add value to your organization.
           </motion.p>
 
           <motion.div
@@ -77,16 +77,47 @@ export const CTASection = () => {
                 />
               </motion.button>
             </Link>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a 
+              href="https://linkedin.com/in/sanikamore/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="px-8 py-4 border border-primary-foreground/20 text-primary-foreground rounded-xl font-semibold text-lg hover:bg-primary-foreground/10 transition-all inline-flex items-center gap-2"
               >
-                <Calendar size={20} />
-                Schedule a Call
+                <Linkedin size={20} />
+                Connect on LinkedIn
               </motion.button>
             </a>
+          </motion.div>
+
+          {/* Quick contact info */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-12 pt-8 border-t border-primary-foreground/10"
+          >
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-primary-foreground/60">
+              <a 
+                href="mailto:sanikasa@buffalo.edu" 
+                className="hover:text-accent transition-colors"
+              >
+                sanikasa@buffalo.edu
+              </a>
+              <span className="hidden sm:inline">•</span>
+              <a 
+                href="tel:+17163089362" 
+                className="hover:text-accent transition-colors"
+              >
+                +1-716-308-9362
+              </a>
+              <span className="hidden sm:inline">•</span>
+              <span>Buffalo, New York</span>
+            </div>
           </motion.div>
         </div>
       </div>
