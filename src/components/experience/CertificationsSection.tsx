@@ -84,16 +84,18 @@ const certifications: Certification[] = [
 ];
 
 const CertificationCard = ({ cert, index }: { cert: Certification; index: number }) => {
+  const handleClick = () => {
+    window.open(cert.link, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <motion.a
-      href={cert.link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="group block"
+      onClick={handleClick}
+      className="group block cursor-pointer"
     >
       <div className="relative p-6 rounded-2xl border border-border bg-background hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1">
         {/* Hover overlay hint */}
@@ -125,7 +127,7 @@ const CertificationCard = ({ cert, index }: { cert: Certification; index: number
         {/* Bottom accent line on hover */}
         <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent via-accent/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" />
       </div>
-    </motion.a>
+    </motion.div>
   );
 };
 
