@@ -5,7 +5,7 @@ import { GridPattern } from "@/components/ui/GridPattern";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GraduationCap } from "lucide-react";
 import { WorkExperienceSection } from "@/components/experience/WorkExperienceSection";
-
+import { CertificationsSection } from "@/components/experience/CertificationsSection";
 const education = [
   {
     degree: "MS in Quantitative Finance & Fintech",
@@ -19,10 +19,6 @@ const education = [
     year: "2021 - 2024",
     focus: "Accounting & Finance",
   },
-];
-
-const certifications = [
-  { name: "Bloomberg Market Concepts", status: "Completed" },
 ];
 
 const Experience = () => {
@@ -68,18 +64,20 @@ const Experience = () => {
         {/* Work Experience Section */}
         <WorkExperienceSection />
 
-        {/* Education & Certifications */}
+        {/* Certifications Section */}
+        <CertificationsSection />
+
+        {/* Education */}
         <section className="py-24 bg-card">
           <div className="container mx-auto px-6">
             <SectionHeading
-              eyebrow="Credentials"
-              title="Education & Certifications"
+              eyebrow="Education"
+              title="Academic Background"
               description="Building expertise through continuous learning."
             />
 
             <div className="max-w-4xl mx-auto mt-16">
-              {/* Education */}
-              <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="grid md:grid-cols-2 gap-6">
                 {education.map((edu, index) => (
                   <motion.div
                     key={edu.degree}
@@ -104,35 +102,6 @@ const Experience = () => {
                   </motion.div>
                 ))}
               </div>
-
-              {/* Certifications */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="p-6 rounded-2xl border border-border bg-background"
-              >
-                <h3 className="font-display text-lg font-semibold mb-4">
-                  Professional Certifications
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {certifications.map((cert) => (
-                    <div
-                      key={cert.name}
-                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-muted/30"
-                    >
-                      <span className="text-sm font-medium">{cert.name}</span>
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
-                        cert.status === "Completed" 
-                          ? "bg-green-500/10 text-green-500" 
-                          : "bg-accent/10 text-accent"
-                      }`}>
-                        {cert.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
             </div>
           </div>
         </section>
