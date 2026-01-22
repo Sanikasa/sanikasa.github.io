@@ -50,11 +50,11 @@ export const Navbar = () => {
               >
                 <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
                   <span className="text-accent-foreground font-display font-bold text-lg">
-                    JD
+                    SM
                   </span>
                 </div>
                 <span className="font-display font-semibold text-lg hidden sm:block">
-                  John Doe
+                  Sanika More
                 </span>
               </motion.div>
             </Link>

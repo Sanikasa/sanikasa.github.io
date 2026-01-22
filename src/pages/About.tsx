@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { GridPattern } from "@/components/ui/GridPattern";
-import { Award, BookOpen, Target, Users, CheckCircle2 } from "lucide-react";
+import { Award, BookOpen, Target, Users, CheckCircle2, GraduationCap } from "lucide-react";
 
 const values = [
   {
@@ -29,11 +29,29 @@ const values = [
   },
 ];
 
-const certifications = [
-  "Certified Public Accountant (CPA)",
-  "Chartered Financial Analyst (CFA) Level II",
-  "Certified Management Accountant (CMA)",
-  "SAP Certified Application Associate",
+const education = [
+  {
+    degree: "MS in Quantitative Finance & Fintech",
+    school: "University at Buffalo, USA",
+    period: "Aug 2024 – May 2026",
+  },
+  {
+    degree: "B.Com in Financial Accounting & Auditing",
+    school: "University of Mumbai, India",
+    period: "Sept 2021 – May 2024",
+  },
+];
+
+const skills = [
+  "FP&A & Budgeting",
+  "Financial Modeling (DCF, FCFE)",
+  "Variance & Cost Analysis",
+  "Cash Flow Management",
+  "Scenario & Sensitivity Analysis",
+  "Excel (Advanced)",
+  "Python (Pandas, NumPy)",
+  "SQL & Power BI",
+  "Bloomberg Terminal",
 ];
 
 const About = () => {
@@ -71,7 +89,7 @@ const About = () => {
                 transition={{ delay: 0.2 }}
                 className="text-xl text-muted-foreground max-w-2xl"
               >
-                I'm a finance professional passionate about transforming complex 
+                Quantitative Finance graduate passionate about transforming complex 
                 financial data into strategic insights that drive business growth.
               </motion.p>
             </div>
@@ -92,7 +110,7 @@ const About = () => {
                 <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-muted relative">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-48 h-48 rounded-full bg-accent/30 flex items-center justify-center">
-                      <span className="font-display text-6xl font-bold text-accent">JD</span>
+                      <span className="font-display text-6xl font-bold text-accent">SM</span>
                     </div>
                   </div>
                 </div>
@@ -100,10 +118,10 @@ const About = () => {
                 {/* Stats overlay */}
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   {[
-                    { value: 8, suffix: "+", label: "Years Experience" },
-                    { value: 50, suffix: "M+", prefix: "$", label: "Managed" },
+                    { value: 2, suffix: "+", label: "Years Experience" },
+                    { value: 95, suffix: "%", label: "Forecast Accuracy" },
                     { value: 15, suffix: "+", label: "Projects" },
-                    { value: 4, suffix: "", label: "Certifications" },
+                    { value: 40, suffix: "%", label: "Time Saved" },
                   ].map((stat, index) => (
                     <motion.div
                       key={stat.label}
@@ -117,7 +135,6 @@ const About = () => {
                         <AnimatedCounter
                           end={stat.value}
                           suffix={stat.suffix}
-                          prefix={stat.prefix}
                         />
                       </div>
                       <div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
@@ -136,50 +153,75 @@ const About = () => {
                 >
                   <h2 className="font-display text-3xl font-bold mb-6">My Journey</h2>
                   <p className="text-muted-foreground mb-6">
-                    My career in finance began with a fascination for how numbers 
-                    can reveal hidden truths about business performance. After 
-                    graduating with an MBA in Finance from Columbia Business School, 
-                    I embarked on a journey that has taken me through various sectors 
-                    of the financial world.
+                    I'm Sanika More, a Quantitative Finance graduate student at the 
+                    University at Buffalo with hands-on experience in financial planning 
+                    & analysis (FP&A), budgeting, forecasting, and variance analysis.
                   </p>
                   <p className="text-muted-foreground mb-6">
-                    Over the past 8+ years, I've had the privilege of working with 
-                    Fortune 500 companies, helping them navigate complex financial 
-                    challenges and unlock new opportunities for growth. My experience 
-                    spans financial planning & analysis, M&A due diligence, cost 
-                    optimization, and process automation.
+                    My background combines a strong accounting foundation from Mumbai 
+                    with advanced quantitative finance skills. I've built DCF and FCFE 
+                    models, conducted cash flow analysis, and delivered data-driven 
+                    insights to support strategic decision-making.
                   </p>
                   <p className="text-muted-foreground mb-8">
-                    What sets me apart is my ability to bridge the gap between 
-                    technical financial analysis and strategic business objectives. 
-                    I believe that finance should be a driver of innovation, not 
-                    just a support function.
+                    What drives me is the intersection of finance and technology—using 
+                    Python, SQL, and advanced Excel to automate processes and uncover 
+                    insights that traditional methods might miss.
                   </p>
                 </motion.div>
 
-                {/* Certifications */}
+                {/* Education */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
+                  className="mb-8"
                 >
-                  <h3 className="font-display text-xl font-semibold mb-4">
-                    Certifications & Credentials
+                  <h3 className="font-display text-xl font-semibold mb-4 flex items-center gap-2">
+                    <GraduationCap size={20} className="text-accent" />
+                    Education
                   </h3>
-                  <div className="space-y-3">
-                    {certifications.map((cert, index) => (
+                  <div className="space-y-4">
+                    {education.map((edu, index) => (
                       <motion.div
-                        key={cert}
+                        key={edu.degree}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + index * 0.1 }}
-                        className="flex items-center gap-3"
+                        className="p-4 rounded-xl bg-card border border-border"
                       >
-                        <CheckCircle2 size={18} className="text-accent flex-shrink-0" />
-                        <span className="text-muted-foreground">{cert}</span>
+                        <h4 className="font-semibold">{edu.degree}</h4>
+                        <p className="text-sm text-muted-foreground">{edu.school}</p>
+                        <p className="text-xs text-accent mt-1">{edu.period}</p>
                       </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Key Skills */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <h3 className="font-display text-xl font-semibold mb-4">
+                    Core Competencies
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.map((skill, index) => (
+                      <motion.span
+                        key={skill}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 + index * 0.05 }}
+                        className="px-3 py-1.5 text-sm font-medium bg-accent/10 text-accent rounded-lg"
+                      >
+                        {skill}
+                      </motion.span>
                     ))}
                   </div>
                 </motion.div>
