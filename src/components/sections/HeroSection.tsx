@@ -295,16 +295,16 @@ export const HeroSection = () => {
             </span>
           </motion.div>
 
-          {/* Animated headline - Action Oriented */}
+          {/* Animated headline */}
           <div className="mb-6">
-            <AnimatedHeadline text="I Build Models." />
+            <AnimatedHeadline text="Your Next" />
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.5 }}
             >
               <span className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gradient-gold">
-                You Build Confidence.
+                Financial Edge.
               </span>
             </motion.div>
           </div>
@@ -313,10 +313,10 @@ export const HeroSection = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.0 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6"
           >
-            Finance & Accounting graduate specializing in{" "}
+            MS in Quantitative Finance & Fintech graduate specializing in{" "}
             <span className="text-accent font-semibold">DCF Valuation</span>,{" "}
             <span className="text-accent font-semibold">FP&A</span>, and{" "}
             <span className="text-accent font-semibold">Portfolio Analytics</span>—driving 
@@ -355,7 +355,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 1.6 }}
             className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base text-muted-foreground mb-12"
           >
-            {["MS Quantitative Finance – UB", "DCF & FCFE Modeling", "Fixed Income", "Portfolio Optimization"].map((item, i) => (
+            {["MS Quantitative Finance & Fintech – UB", "DCF & FCFE Modeling", "Fixed Income", "Portfolio Optimization"].map((item, i) => (
               <motion.span
                 key={item}
                 initial={{ opacity: 0, y: 10 }}
