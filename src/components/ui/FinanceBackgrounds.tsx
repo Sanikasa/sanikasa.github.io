@@ -187,33 +187,35 @@ export const NetworkGridBackground = ({ className = "" }: { className?: string }
   );
 };
 
-// Geometric Gradient Background
+// Geometric Gradient Background - Light Pastel Version
 export const GeometricGradientBackground = ({ 
   variant = "default",
   className = "" 
 }: { 
-  variant?: "default" | "purple" | "emerald" | "gold";
+  variant?: "default" | "purple" | "emerald" | "gold" | "lavender" | "mint";
   className?: string;
 }) => {
   const gradients = {
-    default: "from-navy via-purple/20 to-navy-light",
-    purple: "from-purple/30 via-navy to-purple/20",
-    emerald: "from-emerald/20 via-navy to-emerald/30",
-    gold: "from-accent/20 via-navy to-accent/10",
+    default: "from-lavender/20 via-mint/10 to-peach/20",
+    purple: "from-lavender/30 via-background to-lavender/20",
+    emerald: "from-mint/30 via-background to-mint/20",
+    gold: "from-accent/20 via-background to-accent/10",
+    lavender: "from-lavender/25 via-sky/10 to-lavender/15",
+    mint: "from-mint/25 via-peach/10 to-mint/15",
   };
 
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
       {/* Main gradient */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${gradients[variant]} opacity-50`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradients[variant]} opacity-60`} />
       
-      {/* Geometric shapes */}
+      {/* Soft geometric shapes */}
       <motion.div
         className="absolute top-0 right-0 w-1/2 h-1/2"
         animate={{ rotate: [0, 90, 180, 270, 360] }}
         transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
       >
-        <div className="w-full h-full bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-3xl" />
+        <div className="w-full h-full bg-gradient-to-br from-lavender/20 to-transparent rounded-full blur-3xl" />
       </motion.div>
       
       <motion.div
@@ -221,7 +223,7 @@ export const GeometricGradientBackground = ({
         animate={{ rotate: [360, 270, 180, 90, 0] }}
         transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
       >
-        <div className="w-full h-full bg-gradient-to-tr from-purple/10 to-transparent rounded-full blur-3xl" />
+        <div className="w-full h-full bg-gradient-to-tr from-mint/20 to-transparent rounded-full blur-3xl" />
       </motion.div>
       
       <motion.div
@@ -229,23 +231,23 @@ export const GeometricGradientBackground = ({
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity }}
       >
-        <div className="w-full h-full bg-gradient-to-r from-emerald/10 to-accent/10 rounded-full blur-2xl" />
+        <div className="w-full h-full bg-gradient-to-r from-mint/15 to-peach/15 rounded-full blur-2xl" />
       </motion.div>
 
-      {/* Floating geometric shapes */}
+      {/* Floating geometric shapes - lighter colors */}
       <motion.div
-        className="absolute top-20 right-20 w-32 h-32 border border-accent/20 rounded-lg"
+        className="absolute top-20 right-20 w-32 h-32 border border-lavender/30 rounded-lg"
         animate={{ rotate: [0, 45, 0], y: [0, -20, 0] }}
         transition={{ duration: 10, repeat: Infinity }}
         style={{ transformOrigin: "center" }}
       />
       <motion.div
-        className="absolute bottom-40 left-20 w-24 h-24 border border-purple/20 rounded-full"
+        className="absolute bottom-40 left-20 w-24 h-24 border border-mint/30 rounded-full"
         animate={{ scale: [1, 1.1, 1], x: [0, 10, 0] }}
         transition={{ duration: 8, repeat: Infinity }}
       />
       <motion.div
-        className="absolute top-1/2 right-1/4 w-16 h-16 bg-emerald/5 rotate-45"
+        className="absolute top-1/2 right-1/4 w-16 h-16 bg-peach/10 rotate-45"
         animate={{ rotate: [45, 90, 45], opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 6, repeat: Infinity }}
       />
