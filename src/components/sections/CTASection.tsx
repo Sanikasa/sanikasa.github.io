@@ -60,9 +60,9 @@ export const CTASection = () => {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto"
           >
-            I'm actively seeking FP&A and Financial Analyst opportunities where I can 
-            apply my analytical skills and contribute to strategic decision-making. 
-            Let's discuss how I can add value to your organization.
+            Passionate about applying FP&A and financial analysis expertise to 
+            drive strategic decision-making. Let's connect and explore how we 
+            can create value together.
           </motion.p>
 
           <motion.div

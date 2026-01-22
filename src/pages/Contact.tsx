@@ -88,7 +88,7 @@ const Contact = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8"
               >
                 <Sparkles size={16} className="text-accent" />
-                <span className="text-sm font-medium text-accent">Open to Opportunities</span>
+                <span className="text-sm font-medium text-accent">Let's Connect</span>
               </motion.div>
 
               {/* Main Headline */}
@@ -119,8 +119,8 @@ const Contact = () => {
                 transition={{ delay: 0.2 }}
                 className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10"
               >
-                Open to Finance & Accounting roles where I can drive 
-                strategic decisions through data-driven insights.
+                Passionate about Finance & Accounting with a focus on 
+                driving strategic decisions through data-driven insights.
               </motion.p>
 
               {/* Role Tags */}
@@ -349,7 +349,7 @@ const Contact = () => {
                         </label>
                         <Input
                           name="subject"
-                          placeholder="e.g., FP&A Opportunity, Interview Request"
+                          placeholder="e.g., Collaboration, Project Discussion"
                           required
                           onFocus={() => setFocusedField("subject")}
                           onBlur={() => setFocusedField(null)}
@@ -366,7 +366,7 @@ const Contact = () => {
                         </label>
                         <Textarea
                           name="message"
-                          placeholder="Tell me about the opportunity..."
+                          placeholder="Share your thoughts or ideas..."
                           rows={5}
                           required
                           onFocus={() => setFocusedField("message")}

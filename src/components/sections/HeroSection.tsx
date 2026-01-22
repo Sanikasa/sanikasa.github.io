@@ -296,7 +296,7 @@ export const HeroSection = () => {
               transition={{ duration: 2, repeat: Infinity }}
             />
             <span className="text-sm font-medium text-accent">
-              Open to Opportunities
+              Finance & Analytics Professional
             </span>
           </motion.div>
 
