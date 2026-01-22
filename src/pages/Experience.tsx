@@ -8,66 +8,34 @@ import { ExperienceCard, type ExperienceData } from "@/components/experience/Exp
 
 const experiences: ExperienceData[] = [
   {
-    period: "2024 - Present",
-    role: "Financial Planning & Analysis Intern",
+    period: "2023",
+    role: "Finance Intern",
     company: "Mintskill HR Solutions",
-    location: "Buffalo, NY",
-    current: true,
+    location: "India",
+    current: false,
     challenge: "Manual budget tracking processes were causing delayed variance detection, resulting in missed cost optimization opportunities and reactive rather than proactive financial management.",
-    built: "Developed automated variance analysis dashboards and forecasting models in Excel and Power BI. Created standardized reporting templates that enabled real-time budget monitoring across departments.",
-    impact: "Transformed the FP&A function from reactive reporting to proactive financial management. Leadership now receives actionable insights weekly instead of monthly, enabling faster decision-making.",
+    built: "Developed automated variance analysis dashboards and forecasting models in Excel. Created standardized reporting templates that enabled real-time budget monitoring across departments.",
+    impact: "Identified 6-8% excess vendor payments for recovery. Improved forecast accuracy by 10%. Transformed FP&A function from reactive to proactive financial management.",
     metrics: [
-      { value: 12, suffix: "%", label: "Overspend Identified" },
+      { value: 8, suffix: "%", label: "Payments Recovered" },
       { value: 10, suffix: "%", label: "Forecast Accuracy Gain" },
       { value: 40, suffix: "%", label: "Reporting Time Saved" },
       { value: 3, suffix: "+", label: "Dashboards Built" }
-    ]
-  },
-  {
-    period: "2023 - 2024",
-    role: "Graduate Teaching Assistant",
-    company: "University at Buffalo",
-    location: "Buffalo, NY",
-    current: false,
-    challenge: "Students struggled to connect theoretical financial concepts with real-world applications, leading to lower engagement and difficulty in practical problem-solving.",
-    built: "Designed interactive case studies and hands-on Excel workshops that bridged theory and practice. Created supplementary materials including video tutorials and practice problem sets.",
-    impact: "Significantly improved student performance and engagement. Students reported higher confidence in applying financial analysis skills to real business scenarios.",
-    metrics: [
-      { value: 85, suffix: "%", label: "Student Satisfaction" },
-      { value: 120, suffix: "+", label: "Students Supported" },
-      { value: 15, suffix: "+", label: "Workshops Led" },
-      { value: 4.5, suffix: "/5", label: "Rating Received" }
-    ]
-  },
-  {
-    period: "2021 - 2023",
-    role: "Senior Accountant",
-    company: "PKF Sridhar & Santhanam LLP",
-    location: "Chennai, India",
-    current: false,
-    challenge: "Complex audit engagements with tight deadlines required balancing thoroughness with efficiency while maintaining compliance with regulatory standards across diverse industries.",
-    built: "Developed standardized audit procedures and checklists that improved team efficiency. Implemented Excel-based analytical tools for faster data validation and variance analysis.",
-    impact: "Reduced audit cycle time while improving quality scores. Mentored junior staff and contributed to winning new client engagements through quality deliverables.",
-    metrics: [
-      { value: 25, suffix: "%", label: "Cycle Time Reduction" },
-      { value: 50, suffix: "+", label: "Audits Completed" },
-      { value: 8, suffix: "", label: "Team Members Mentored" },
-      { value: 100, suffix: "%", label: "Compliance Rate" }
     ]
   }
 ];
 
 const education = [
   {
-    degree: "Master of Science in Finance",
+    degree: "MS in Quantitative Finance & Fintech",
     school: "University at Buffalo, SUNY",
-    year: "2025",
+    year: "2024 - 2026",
     focus: "Financial Analysis & Modeling",
   },
   {
-    degree: "Bachelor of Commerce",
-    school: "University of Madras",
-    year: "2021",
+    degree: "B.Com in Financial Accounting & Auditing",
+    school: "University of Mumbai",
+    year: "2021 - 2024",
     focus: "Accounting & Finance",
   },
 ];
