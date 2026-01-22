@@ -650,5 +650,81 @@ export const projects: Project[] = [
     impactSuffix: "%",
     impactPrefix: "",
     impactLabel: "Portfolio Yield"
+  },
+  {
+    id: 9,
+    slug: "retail-comps-analysis",
+    title: "Retail Sector Comparable Company Analysis",
+    category: "Equity Valuation",
+    skills: ["Financial Modeling", "Data Analytics", "Forecasting"],
+    tools: ["Excel", "Bloomberg"],
+    industry: "Retail",
+    shortDesc: "Conducted comprehensive comparable company analysis of retail/consumer sector using P/E, EV/EBITDA, and EV/Revenue multiples.",
+    icon: BarChart3,
+    color: "from-rose-500/20 to-pink-500/20",
+    year: "2024",
+    duration: "2 weeks",
+    
+    overview: "Performed relative valuation analysis across major retail and consumer companies using trading multiples to identify undervalued opportunities and establish fair value ranges for investment recommendations.",
+    
+    problem: {
+      title: "The Valuation Question",
+      content: "Determine relative valuations across retail/consumer sector companies to identify investment opportunities. Establish whether target companies are trading at premium or discount to peers based on fundamental metrics."
+    },
+    
+    approach: {
+      title: "Comparable Analysis Framework",
+      content: "Selected peer group based on business model similarity, size, and growth profile. Calculated trading multiples including P/E, EV/EBITDA, and EV/Revenue. Adjusted for non-recurring items and normalized earnings for accurate comparison."
+    },
+    
+    analysis: {
+      title: "Multiple Analysis",
+      content: "Analyzed median, mean, and quartile ranges for each valuation metric across the peer set. Identified outliers and investigated drivers of premium/discount valuations including growth rates, margins, and market positioning."
+    },
+    
+    outcome: {
+      title: "Investment Implications",
+      content: "Established implied equity values using peer median multiples. Identified 2-3 companies trading at significant discounts to intrinsic value based on comparable analysis, providing actionable investment recommendations."
+    },
+    
+    learnings: [
+      "Peer selection significantly impacts valuation conclusions",
+      "EV/EBITDA provides cleaner comparison by removing capital structure differences",
+      "Growth-adjusted multiples (PEG) reveal hidden value in high-growth names",
+      "Combining multiple metrics provides more robust valuation ranges"
+    ],
+    
+    kpis: [
+      { label: "Companies Analyzed", value: "8+", trend: "neutral" },
+      { label: "Valuation Multiples", value: "3", trend: "neutral" },
+      { label: "Median P/E", value: "18.5x", trend: "neutral" },
+      { label: "Median EV/EBITDA", value: "10.2x", trend: "neutral" }
+    ],
+    
+    chartData: [
+      { name: "Company A", value: 22.5, projected: 12.8 },
+      { name: "Company B", value: 18.2, projected: 9.5 },
+      { name: "Company C", value: 15.8, projected: 8.2 },
+      { name: "Company D", value: 20.1, projected: 11.4 },
+      { name: "Company E", value: 16.5, projected: 9.8 },
+      { name: "Median", value: 18.5, projected: 10.2 }
+    ],
+    
+    tableData: {
+      headers: ["Company", "P/E", "EV/EBITDA", "EV/Revenue", "Premium/Discount"],
+      rows: [
+        { company: "Company A", pe: "22.5x", evEbitda: "12.8x", evRev: "1.8x", premium: "+22% Premium" },
+        { company: "Company B", pe: "18.2x", evEbitda: "9.5x", evRev: "1.2x", premium: "-2% Discount" },
+        { company: "Company C", pe: "15.8x", evEbitda: "8.2x", evRev: "0.9x", premium: "-15% Discount" },
+        { company: "Company D", pe: "20.1x", evEbitda: "11.4x", evRev: "1.5x", premium: "+9% Premium" },
+        { company: "Company E", pe: "16.5x", evEbitda: "9.8x", evRev: "1.1x", premium: "-11% Discount" },
+        { company: "Peer Median", pe: "18.5x", evEbitda: "10.2x", evRev: "1.2x", premium: "Benchmark" }
+      ]
+    },
+    
+    impactValue: 18.5,
+    impactSuffix: "x",
+    impactPrefix: "",
+    impactLabel: "Median P/E Multiple"
   }
 ];
