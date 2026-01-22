@@ -1,4 +1,4 @@
-import { TrendingUp, DollarSign, BarChart3, PieChart, FileSpreadsheet, Database, Briefcase } from "lucide-react";
+import { TrendingUp, DollarSign, BarChart3, PieChart, FileSpreadsheet, Database, Briefcase, Landmark } from "lucide-react";
 
 export interface ProjectMetric {
   label: string;
@@ -578,5 +578,77 @@ export const projects: Project[] = [
     impactSuffix: "",
     impactPrefix: "",
     impactLabel: "Sharpe Ratio Achieved"
+  },
+  {
+    id: 8,
+    slug: "fixed-income-portfolio",
+    title: "Fixed Income Portfolio Analysis",
+    category: "Fixed Income",
+    skills: ["Financial Modeling", "Risk Analysis", "Data Analytics"],
+    tools: ["Excel", "Bloomberg"],
+    industry: "Financial Services",
+    shortDesc: "Analyzed investment-grade corporate bonds and constructed a $1M optimized fixed-income portfolio with yield sensitivity analysis.",
+    icon: Landmark,
+    color: "from-sky-500/20 to-cyan-500/20",
+    year: "2024",
+    duration: "3 weeks",
+    
+    overview: "Comprehensive fixed income analysis of investment-grade corporate bonds from Walmart (WMT), Ford (F), Apple (AAPL), and Caterpillar (CAT), including bond pricing, yield calculations, and portfolio optimization for a $1M allocation.",
+    
+    problem: {
+      title: "The Portfolio Challenge",
+      content: "Construct an optimized $1M fixed-income portfolio that balances yield, duration risk, and credit quality across investment-grade corporate bonds while assessing sensitivity to interest rate movements."
+    },
+    
+    approach: {
+      title: "Bond Analytics Framework",
+      content: "Calculated bond pricing using present value of cash flows, yield to maturity (YTM) via iterative solving, Macaulay and modified duration for interest rate sensitivity, and convexity for curvature adjustments. Applied Bloomberg Terminal for real-time market data."
+    },
+    
+    analysis: {
+      title: "Risk Assessment",
+      content: "Performed ±1% yield sensitivity analysis on each bond position to quantify price impact. Evaluated credit risk through spread analysis and rating assessment. Optimized portfolio weights to achieve target duration while maximizing yield."
+    },
+    
+    outcome: {
+      title: "Portfolio Construction",
+      content: "Built a diversified $1M portfolio with weighted average duration of 5.2 years, portfolio yield of 5.8%, and estimated price sensitivity of ±5.1% for 100bps yield change. Identified optimal allocation across issuers to minimize concentration risk."
+    },
+    
+    learnings: [
+      "Duration is the primary driver of interest rate risk in fixed income",
+      "Convexity provides additional precision for large yield movements",
+      "Credit spread analysis reveals relative value opportunities",
+      "Portfolio duration can be managed through strategic weight allocation"
+    ],
+    
+    kpis: [
+      { label: "Portfolio Value", value: "$1M", trend: "neutral" },
+      { label: "Portfolio Yield", value: "5.8%", trend: "up" },
+      { label: "Avg Duration", value: "5.2 yrs", trend: "neutral" },
+      { label: "Bonds Analyzed", value: "4", trend: "neutral" }
+    ],
+    
+    chartData: [
+      { name: "WMT", value: 4.2, projected: 4.8 },
+      { name: "F", value: 6.5, projected: 3.2 },
+      { name: "AAPL", value: 4.8, projected: 5.5 },
+      { name: "CAT", value: 5.4, projected: 6.1 }
+    ],
+    
+    tableData: {
+      headers: ["Bond", "Coupon", "YTM", "Duration", "Convexity", "Weight"],
+      rows: [
+        { bond: "Walmart (WMT)", coupon: "4.00%", ytm: "4.25%", duration: "4.8 yrs", convexity: "28.5", weight: "30%" },
+        { bond: "Ford (F)", coupon: "5.50%", ytm: "6.10%", duration: "3.2 yrs", convexity: "14.2", weight: "20%" },
+        { bond: "Apple (AAPL)", coupon: "3.75%", ytm: "4.15%", duration: "5.5 yrs", convexity: "35.8", weight: "30%" },
+        { bond: "Caterpillar (CAT)", coupon: "4.75%", ytm: "5.20%", duration: "6.1 yrs", convexity: "42.3", weight: "20%" }
+      ]
+    },
+    
+    impactValue: 5.8,
+    impactSuffix: "%",
+    impactPrefix: "",
+    impactLabel: "Portfolio Yield"
   }
 ];
