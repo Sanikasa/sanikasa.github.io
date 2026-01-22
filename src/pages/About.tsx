@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { GridPattern } from "@/components/ui/GridPattern";
 import { Award, BookOpen, Target, Users, CheckCircle2, GraduationCap } from "lucide-react";
-import professionalPhoto from "@/assets/professional-photo.jpg";
+
 
 const values = [
   {
@@ -102,24 +102,14 @@ const About = () => {
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Image */}
+              {/* Stats Cards */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 className="sticky top-32"
               >
-                <div className="aspect-[3/4] max-w-sm rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 relative border border-accent/20 shadow-2xl">
-                  <img 
-                    src={professionalPhoto} 
-                    alt="Sanika More - Professional Photo" 
-                    className="w-full h-full object-cover object-center"
-                  />
-                  {/* Decorative overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-transparent to-transparent" />
-                </div>
-                
-                {/* Stats overlay */}
-                <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="grid grid-cols-2 gap-4">
                   {[
                     { value: 5, suffix: "", label: "Interactive Projects" },
                     { value: 334, suffix: "", prefix: "$", label: "HD Valuation" },
@@ -132,15 +122,15 @@ const About = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="p-4 rounded-xl bg-card border border-border text-center"
+                      className="p-6 rounded-xl bg-card border border-border text-center"
                     >
-                      <div className="font-display text-2xl font-bold text-accent">
+                      <div className="font-display text-3xl font-bold text-accent">
                         <AnimatedCounter
                           end={stat.value}
                           suffix={stat.suffix}
                         />
                       </div>
-                      <div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
+                      <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
                     </motion.div>
                   ))}
                 </div>
