@@ -233,26 +233,53 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.0 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6"
           >
-            Finance graduate with hands-on FP&A experience driving{" "}
-            <span className="text-accent font-semibold">measurable business impact</span>{" "}
-            through variance analysis, financial modeling, and process automation.
+            Finance & Accounting graduate specializing in{" "}
+            <span className="text-accent font-semibold">DCF Valuation</span>,{" "}
+            <span className="text-accent font-semibold">FP&A</span>, and{" "}
+            <span className="text-accent font-semibold">Portfolio Analytics</span>—driving 
+            measurable business impact through data-driven financial insights.
           </motion.p>
+
+          {/* Key metrics strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1.2 }}
+            className="flex flex-wrap items-center justify-center gap-6 mb-8"
+          >
+            {[
+              { value: "$334/share", label: "Home Depot Valuation" },
+              { value: "85%", label: "Process Time Saved" },
+              { value: "+52%", label: "Sharpe Ratio Improvement" },
+            ].map((metric, i) => (
+              <motion.div
+                key={metric.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.4 + i * 0.15 }}
+                className="text-center"
+              >
+                <div className="text-2xl font-bold text-accent">{metric.value}</div>
+                <div className="text-xs text-muted-foreground">{metric.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
 
           {/* Subheadline with staggered reveal */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.2 }}
+            transition={{ duration: 0.7, delay: 1.6 }}
             className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base text-muted-foreground mb-12"
           >
-            {["MS Finance – UB", "FP&A", "Variance Analysis", "Financial Modeling"].map((item, i) => (
+            {["MS Quantitative Finance – UB", "DCF & FCFE Modeling", "Fixed Income", "Portfolio Optimization"].map((item, i) => (
               <motion.span
                 key={item}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.4 + i * 0.1 }}
+                transition={{ delay: 1.8 + i * 0.1 }}
                 className="flex items-center"
               >
                 {i > 0 && <span className="mr-2 sm:mr-4 text-accent">•</span>}
@@ -265,7 +292,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.6 }}
+            transition={{ duration: 0.7, delay: 2.0 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to="/projects">
@@ -275,7 +302,7 @@ export const HeroSection = () => {
                 className="group px-8 py-4 bg-accent text-accent-foreground rounded-xl font-semibold text-lg transition-all inline-flex items-center gap-3"
                 style={{ boxShadow: "var(--shadow-gold)" }}
               >
-                View My Work
+                View My Projects
                 <motion.span
                   className="inline-block"
                   animate={{ x: [0, 4, 0] }}
@@ -292,7 +319,7 @@ export const HeroSection = () => {
                 className="group px-8 py-4 border-2 border-border rounded-xl font-semibold text-lg hover:border-accent/50 transition-all inline-flex items-center gap-3"
               >
                 <Briefcase size={20} className="text-accent" />
-                Hire Me
+                Let's Connect
               </motion.button>
             </Link>
           </motion.div>
