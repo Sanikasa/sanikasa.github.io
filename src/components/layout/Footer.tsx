@@ -36,7 +36,8 @@ export const Footer = () => {
               <Button variant="outline" size="lg" asChild>
                 <a
                   href="/Sanika_More_Resume.pdf"
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="gap-2"
                 >
                   <FileText className="h-4 w-4" />
