@@ -4,14 +4,23 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { projects } from "@/components/projects/ProjectData";
+import { DataMatrixBackground, GeometricGradientBackground } from "@/components/ui/FinanceBackgrounds";
 
 export const ProjectsPreview = () => {
   // Show first 3 featured projects for homepage
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section className="py-24 md:py-32 bg-card">
-      <div className="container mx-auto px-6">
+    <section className="relative py-24 md:py-32 bg-gradient-to-b from-navy via-navy-light to-navy overflow-hidden">
+      {/* Rich backgrounds */}
+      <DataMatrixBackground className="opacity-40" />
+      <GeometricGradientBackground variant="emerald" className="opacity-40" />
+      
+      {/* Gradient orbs */}
+      <div className="absolute top-20 right-20 w-96 h-96 bg-emerald/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple/10 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <SectionHeading
           eyebrow="Featured Projects"
           title="Real Work, Real Impact"
@@ -30,7 +39,7 @@ export const ProjectsPreview = () => {
               <Link to="/projects">
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="group h-full rounded-2xl border border-border bg-background overflow-hidden transition-all hover:border-accent/50 hover:shadow-xl"
+                  className="group h-full rounded-2xl border border-accent/20 bg-card/90 backdrop-blur-sm overflow-hidden transition-all hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10"
                 >
                   {/* Gradient header */}
                   <div className={`h-2 bg-gradient-to-r ${project.color}`} />

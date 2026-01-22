@@ -9,6 +9,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { useRef } from "react";
+import { TradingChartBackground, GeometricGradientBackground } from "@/components/ui/FinanceBackgrounds";
 
 const journeySteps = [
   {
@@ -18,7 +19,8 @@ const journeySteps = [
     title: "Accounting Foundation",
     description: "Earned a B.Com in Financial Accounting & Auditing from the University of Mumbai. Built expertise in financial statements, GAAP principles, and the language of business.",
     highlight: "Strong fundamentals in accounting",
-    color: "from-blue-500/20 to-blue-600/10",
+    color: "from-purple to-purple/60",
+    borderColor: "border-purple/30",
   },
   {
     id: 2,
@@ -27,7 +29,8 @@ const journeySteps = [
     title: "FP&A Internship",
     description: "Finance Intern at Mintskill HR Solutions. Performed variance analysis, built automated dashboards, and improved forecast accuracy by 10%. Recovered 6-8% in excess vendor payments.",
     highlight: "Real impact through analysis",
-    color: "from-emerald-500/20 to-emerald-600/10",
+    color: "from-emerald to-emerald/60",
+    borderColor: "border-emerald/30",
   },
   {
     id: 3,
@@ -36,7 +39,8 @@ const journeySteps = [
     title: "Quantitative Finance",
     description: "Pursuing MS in Quantitative Finance & Fintech at University at Buffalo. Building DCF/FCFE models, conducting Monte Carlo simulations, and mastering Python for finance.",
     highlight: "Advanced modeling & analytics",
-    color: "from-accent/20 to-accent/10",
+    color: "from-accent to-gold-dark",
+    borderColor: "border-accent/30",
   },
   {
     id: 4,
@@ -45,7 +49,8 @@ const journeySteps = [
     title: "Seeking Opportunities",
     description: "Ready for FP&A and Financial Analyst roles where I can drive strategic decisions through data. Open to full-time positions and summer 2025 internships.",
     highlight: "Impact-driven mindset",
-    color: "from-purple-500/20 to-purple-600/10",
+    color: "from-burgundy to-burgundy/60",
+    borderColor: "border-burgundy/30",
   },
 ];
 
@@ -112,9 +117,9 @@ const TimelineStep = ({
           whileInView={{ scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className={`relative z-10 w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} border border-border flex items-center justify-center shadow-lg`}
+          className={`relative z-10 w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} ${step.borderColor} border flex items-center justify-center shadow-lg`}
         >
-          <step.icon size={24} className="text-accent" />
+          <step.icon size={24} className="text-foreground" />
           
           {/* Pulse effect */}
           <motion.div
@@ -144,9 +149,9 @@ const TimelineStep = ({
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
-          className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} border border-border flex items-center justify-center`}
+          className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} ${step.borderColor} border flex items-center justify-center`}
         >
-          <step.icon size={18} className="text-accent" />
+          <step.icon size={18} className="text-foreground" />
         </motion.div>
         {!isLast && <div className="w-0.5 h-full bg-border/50 mt-2" />}
       </div>
@@ -164,14 +169,19 @@ export const AboutPreview = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section ref={containerRef} className="relative py-24 md:py-32 bg-background overflow-hidden">
-      {/* Animated background elements */}
+    <section ref={containerRef} className="relative py-24 md:py-32 bg-gradient-to-b from-background via-card to-background overflow-hidden">
+      {/* Rich animated backgrounds */}
+      <TradingChartBackground className="opacity-20" />
+      <GeometricGradientBackground variant="purple" className="opacity-30" />
+      
+      {/* Animated parallax orbs */}
       <motion.div
         style={{ y: backgroundY }}
         className="absolute inset-0 pointer-events-none"
       >
-        <div className="absolute top-1/4 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-10 w-72 h-72 bg-purple/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-emerald/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
       </motion.div>
 
       <div className="container mx-auto px-6 relative z-10">

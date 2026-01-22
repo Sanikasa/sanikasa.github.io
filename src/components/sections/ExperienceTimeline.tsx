@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { GeometricGradientBackground } from "@/components/ui/FinanceBackgrounds";
 
 const experiences = [
   {
@@ -10,13 +11,15 @@ const experiences = [
     company: "Mintskill HR Solutions",
     description: "Performed variance analysis, built automated dashboards, improved forecast accuracy by 10%, and recovered 6-8% in excess vendor payments.",
     current: true,
+    color: "bg-emerald border-emerald",
   },
   {
     period: "2024 - 2026",
-    role: "MS Quantitative Finance",
+    role: "MS Quantitative Finance & Fintech",
     company: "University at Buffalo",
     description: "Building DCF/FCFE models, portfolio optimization, fixed income analysis, and Python for finance.",
     current: false,
+    color: "bg-purple border-purple",
   },
   {
     period: "2021 - 2024",
@@ -24,13 +27,19 @@ const experiences = [
     company: "University of Mumbai",
     description: "Strong foundation in accounting principles, financial statements, and audit procedures.",
     current: false,
+    color: "bg-accent border-accent",
   },
 ];
 
 export const ExperienceTimeline = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-6">
+    <section className="relative py-24 md:py-32 bg-gradient-to-b from-background via-card to-background overflow-hidden">
+      {/* Background */}
+      <GeometricGradientBackground variant="gold" className="opacity-30" />
+      <div className="absolute top-20 left-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple/10 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <SectionHeading
           eyebrow="Career Journey"
           title="Experience That Matters"
@@ -64,11 +73,7 @@ export const ExperienceTimeline = () => {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.15 }}
-                className={`absolute left-0 top-1 w-4 h-4 rounded-full border-2 ${
-                  exp.current
-                    ? "bg-accent border-accent"
-                    : "bg-background border-muted-foreground"
-                }`}
+                className={`absolute left-0 top-1 w-4 h-4 rounded-full border-2 ${exp.color}`}
               />
 
               {/* Content */}
