@@ -1,4 +1,4 @@
-import { TrendingUp, DollarSign, BarChart3, PieChart, FileSpreadsheet, Database, Briefcase, Landmark } from "lucide-react";
+import { TrendingUp, DollarSign, BarChart3, PieChart, FileSpreadsheet, Database, Briefcase, Landmark, Rocket } from "lucide-react";
 
 export interface ProjectMetric {
   label: string;
@@ -726,5 +726,79 @@ export const projects: Project[] = [
     impactSuffix: "x",
     impactPrefix: "",
     impactLabel: "Median P/E Multiple"
+  },
+  {
+    id: 10,
+    slug: "glowsafe-brand-strategy",
+    title: "GlowSafe: Tech Startup Brand & Go-to-Market Strategy",
+    category: "Strategic Finance",
+    skills: ["Financial Modeling", "Data Analytics", "Forecasting"],
+    tools: ["Excel", "Power BI", "Tableau"],
+    industry: "Technology",
+    shortDesc: "Developed comprehensive brand strategy, financial projections, and go-to-market plan for a safety technology app startup.",
+    icon: Rocket,
+    color: "from-green-500/20 to-emerald-500/20",
+    year: "2024",
+    duration: "6 weeks",
+    
+    overview: "Led financial analysis, brand positioning, and marketing strategy development for GlowSafe, a safety technology mobile application. Delivered investor-ready materials including financial projections, market sizing, and integrated marketing campaign.",
+    
+    problem: {
+      title: "The Strategic Challenge",
+      content: "Develop a compelling brand identity and go-to-market strategy for a new safety tech app entering a competitive market. Required market validation, financial feasibility analysis, and cohesive brand messaging to attract investors and early adopters."
+    },
+    
+    approach: {
+      title: "Integrated Strategy Framework",
+      content: "Conducted comprehensive market research and competitive analysis. Built financial projections including revenue forecasts, customer acquisition costs, and unit economics. Developed brand positioning, messaging hierarchy, and multi-channel marketing strategy."
+    },
+    
+    analysis: {
+      title: "Market & Financial Analysis",
+      content: "Performed TAM/SAM/SOM analysis for the safety tech market. Modeled 5-year financial projections with customer growth assumptions, pricing strategy, and path to profitability. Analyzed competitor positioning to identify differentiation opportunities."
+    },
+    
+    outcome: {
+      title: "Deliverables & Impact",
+      content: "Delivered investor pitch deck, brand guidelines, financial model, and integrated marketing campaign including social media, email, and web advertising strategy. Materials positioned the startup for seed funding conversations."
+    },
+    
+    learnings: [
+      "Unit economics must validate before scaling customer acquisition spend",
+      "Brand positioning should address emotional and functional benefits",
+      "Cross-functional projects require clear stakeholder alignment",
+      "Financial projections must be grounded in realistic market assumptions"
+    ],
+    
+    kpis: [
+      { label: "Market Size (TAM)", value: "$2.5B", trend: "neutral" },
+      { label: "5-Year Revenue", value: "$15M", trend: "up" },
+      { label: "CAC Payback", value: "8 mo", trend: "up" },
+      { label: "Deliverables", value: "12+", trend: "neutral" }
+    ],
+    
+    chartData: [
+      { name: "Year 1", value: 0.5, projected: 50 },
+      { name: "Year 2", value: 1.8, projected: 120 },
+      { name: "Year 3", value: 4.5, projected: 280 },
+      { name: "Year 4", value: 8.2, projected: 450 },
+      { name: "Year 5", value: 15.0, projected: 680 }
+    ],
+    
+    tableData: {
+      headers: ["Metric", "Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+      rows: [
+        { metric: "Revenue ($M)", year1: "0.5", year2: "1.8", year3: "4.5", year4: "8.2", year5: "15.0" },
+        { metric: "Users (K)", year1: "50", year2: "120", year3: "280", year4: "450", year5: "680" },
+        { metric: "ARPU ($)", year1: "10", year2: "15", year3: "16", year4: "18", year5: "22" },
+        { metric: "CAC ($)", year1: "25", year2: "20", year3: "18", year4: "16", year5: "15" },
+        { metric: "LTV/CAC", year1: "2.0x", year2: "2.8x", year3: "3.2x", year4: "3.8x", year5: "4.5x" }
+      ]
+    },
+    
+    impactValue: 15,
+    impactSuffix: "M",
+    impactPrefix: "$",
+    impactLabel: "5-Year Revenue Projection"
   }
 ];
