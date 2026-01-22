@@ -1,50 +1,25 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, TrendingUp, DollarSign, BarChart3 } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const projects = [
-  {
-    id: 1,
-    title: "Cost Optimization Initiative",
-    category: "Financial Analysis",
-    description: "Led enterprise-wide cost reduction program resulting in $12M annual savings",
-    impact: "30% reduction",
-    icon: TrendingUp,
-    color: "from-emerald-500/20 to-teal-500/20",
-  },
-  {
-    id: 2,
-    title: "M&A Due Diligence",
-    category: "Strategic Finance",
-    description: "Managed financial due diligence for $200M acquisition deal",
-    impact: "$200M deal",
-    icon: DollarSign,
-    color: "from-blue-500/20 to-indigo-500/20",
-  },
-  {
-    id: 3,
-    title: "FP&A Automation",
-    category: "Process Improvement",
-    description: "Automated financial reporting reducing close time by 40%",
-    impact: "40% faster",
-    icon: BarChart3,
-    color: "from-amber-500/20 to-orange-500/20",
-  },
-];
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import { projects } from "@/components/projects/ProjectData";
 
 export const ProjectsPreview = () => {
+  // Show first 3 projects
+  const featuredProjects = projects.slice(0, 3);
+
   return (
     <section className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-6">
         <SectionHeading
           eyebrow="Featured Projects"
           title="Work That Speaks for Itself"
-          description="Select projects showcasing my expertise in financial analysis, strategic planning, and process optimization."
+          description="Interactive case studies showcasing financial analysis, modeling, and strategic planning. Click any project to explore the full story."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-16">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -55,39 +30,70 @@ export const ProjectsPreview = () => {
               <Link to="/projects">
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="group h-full rounded-2xl border border-border bg-background p-6 transition-all hover:border-accent/50 hover:shadow-lg"
+                  className="group h-full rounded-2xl border border-border bg-background overflow-hidden transition-all hover:border-accent/50 hover:shadow-xl"
                 >
-                  {/* Icon */}
-                  <div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center mb-6`}
-                  >
-                    <project.icon size={24} className="text-foreground" />
-                  </div>
+                  {/* Gradient header */}
+                  <div className={`h-2 bg-gradient-to-r ${project.color}`} />
+                  
+                  <div className="p-6">
+                    {/* Icon */}
+                    <div
+                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center mb-6 transition-transform group-hover:scale-110`}
+                    >
+                      <project.icon size={24} className="text-foreground" />
+                    </div>
 
-                  {/* Category */}
-                  <span className="text-xs font-medium text-accent uppercase tracking-wider">
-                    {project.category}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="font-display text-xl font-semibold mt-2 mb-3 group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-6">
-                    {project.description}
-                  </p>
-
-                  {/* Impact & Arrow */}
-                  <div className="flex items-center justify-between mt-auto">
-                    <span className="text-sm font-semibold text-accent">
-                      {project.impact}
+                    {/* Category */}
+                    <span className="inline-block px-2.5 py-1 text-xs font-semibold text-accent bg-accent/10 rounded-full uppercase tracking-wider">
+                      {project.category}
                     </span>
-                    <ArrowUpRight
-                      size={18}
-                      className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
-                    />
+
+                    {/* Title */}
+                    <h3 className="font-display text-xl font-semibold mt-3 mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                      {project.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                      {project.shortDesc}
+                    </p>
+
+                    {/* Tools */}
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {project.tools.slice(0, 3).map((tool) => (
+                        <span
+                          key={tool}
+                          className="px-2 py-0.5 text-xs font-medium bg-muted rounded text-muted-foreground"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Impact & Arrow */}
+                    <div className="flex items-center justify-between pt-4 border-t border-border">
+                      <div>
+                        <div className="font-display text-2xl font-bold text-accent">
+                          <AnimatedCounter
+                            end={project.impactValue}
+                            suffix={project.impactSuffix}
+                            prefix={project.impactPrefix}
+                          />
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          {project.impactLabel}
+                        </div>
+                      </div>
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        className="p-2 rounded-lg bg-muted/50 group-hover:bg-accent/10 transition-colors"
+                      >
+                        <ArrowUpRight
+                          size={18}
+                          className="text-muted-foreground group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                        />
+                      </motion.div>
+                    </div>
                   </div>
                 </motion.div>
               </Link>
@@ -106,10 +112,15 @@ export const ProjectsPreview = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-xl font-medium hover:bg-muted transition-all"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-accent/10 hover:bg-accent/20 border border-accent/30 rounded-full text-accent font-semibold transition-all duration-300"
             >
-              View All Projects
-              <ArrowRight size={18} />
+              <span>View All Projects</span>
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <ArrowRight size={18} />
+              </motion.span>
             </motion.button>
           </Link>
         </motion.div>
