@@ -45,12 +45,6 @@ const Contact = () => {
     (e.target as HTMLFormElement).reset();
   };
 
-  const handleResumeDownload = () => {
-    toast({
-      title: "Resume Download",
-      description: "Your resume download will start shortly.",
-    });
-  };
 
   return (
     <div className="min-h-screen">
@@ -244,32 +238,6 @@ const Contact = () => {
                     </motion.a>
                   </div>
 
-                  {/* Resume Download */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="p-6 rounded-2xl bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border border-accent/20"
-                  >
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                        <Download size={18} className="text-accent-foreground" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold">Resume</h4>
-                        <p className="text-sm text-muted-foreground">Updated January 2025</p>
-                      </div>
-                    </div>
-                    <Button
-                      onClick={handleResumeDownload}
-                      variant="outline"
-                      className="w-full border-accent/30 hover:bg-accent hover:text-accent-foreground transition-all"
-                    >
-                      <Download size={16} className="mr-2" />
-                      Download PDF
-                    </Button>
-                  </motion.div>
                 </motion.div>
 
                 {/* Right Column - Form */}
