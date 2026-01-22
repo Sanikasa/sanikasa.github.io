@@ -3,6 +3,7 @@ import { X, Calendar, Clock, ArrowLeft, CheckCircle2, Lightbulb, Target, BarChar
 import { KPICard } from "./KPICard";
 import { InteractiveChart } from "./InteractiveChart";
 import { DynamicTable } from "./DynamicTable";
+import { SensitivityChart } from "./SensitivityChart";
 import type { Project } from "./ProjectData";
 
 interface ProjectDetailProps {
@@ -202,15 +203,26 @@ export const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
               </motion.h3>
               
               <div className="grid lg:grid-cols-2 gap-6">
-                <InteractiveChart 
-                  data={project.chartData} 
-                  title="Performance Analysis"
-                  chartType="area"
-                />
+                {/* Show sensitivity chart for valuation projects */}
+                {project.slug === "home-depot-valuation" ? (
+                  <SensitivityChart 
+                    data={project.chartData.map(d => ({ name: d.name, value: d.value }))}
+                    title="DCF Valuation Sensitivity: Margin Impact"
+                    baseValue={334}
+                    prefix="$"
+                    suffix="/share"
+                  />
+                ) : (
+                  <InteractiveChart 
+                    data={project.chartData} 
+                    title="Performance Analysis"
+                    chartType="area"
+                  />
+                )}
                 <DynamicTable 
                   headers={project.tableData.headers}
                   rows={project.tableData.rows}
-                  title="Financial Model"
+                  title={project.slug === "home-depot-valuation" ? "DCF Cash Flow Projections" : "Financial Model"}
                 />
               </div>
             </div>
