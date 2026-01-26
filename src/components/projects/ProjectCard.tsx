@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Calendar, Clock } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import type { Project } from "./ProjectData";
 
@@ -76,18 +76,6 @@ export const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
                 +{project.tools.length - 3}
               </span>
             )}
-          </div>
-
-          {/* Meta */}
-          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-            <span className="flex items-center gap-1.5">
-              <Calendar size={14} />
-              {project.year}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Clock size={14} />
-              {project.duration}
-            </span>
           </div>
 
           {/* Impact */}
