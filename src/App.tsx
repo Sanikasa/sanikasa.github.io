@@ -8,6 +8,7 @@ import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { CursorGlow } from "@/components/ui/CursorGlow";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Skills from "./pages/Skills";
@@ -32,6 +33,7 @@ const AnimatedRoutes = () => {
         <Routes location={location}>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about-me" element={<AboutMe />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/skills" element={<Skills />} />
