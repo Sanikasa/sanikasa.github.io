@@ -45,39 +45,43 @@ const AboutMe = () => {
           <GridPattern className="opacity-30" />
 
           <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4"
-              >
-                My Story
-              </motion.span>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
-              >
-                The Accountant with a
-                <br />
-                <span className="text-gradient-gold">Creative Compass</span>
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
-              >
-                I'm not just an accountant; I'm a storyteller navigating the globe.
-              </motion.p>
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              {/* Text Content */}
+              <div className="flex-1 text-center md:text-left">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4"
+                >
+                  My Story
+                </motion.span>
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+                >
+                  The Accountant with a
+                  <br />
+                  <span className="text-gradient-gold">Creative Compass</span>
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-xl text-muted-foreground max-w-2xl"
+                >
+                  I'm not just an accountant; I'm a storyteller navigating the globe.
+                </motion.p>
+              </div>
 
               {/* Profile Photo */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
-                className="relative w-40 h-40 md:w-48 md:h-48 mx-auto"
+                className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 shrink-0"
               >
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 blur-xl" />
                 <img
@@ -86,6 +90,7 @@ const AboutMe = () => {
                   className="relative w-full h-full rounded-full object-cover border-4 border-accent/20 shadow-xl"
                 />
               </motion.div>
+            </div>
             </div>
           </div>
         </section>
