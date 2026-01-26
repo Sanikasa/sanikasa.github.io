@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Clock, ArrowLeft, CheckCircle2, Lightbulb, Target, BarChart2, Zap } from "lucide-react";
+import { X, ArrowLeft, CheckCircle2, Lightbulb, Target, BarChart2, Zap } from "lucide-react";
 import { KPICard } from "./KPICard";
 import { InteractiveChart } from "./InteractiveChart";
 import { DynamicTable } from "./DynamicTable";
@@ -95,21 +95,6 @@ export const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
                 {project.overview}
               </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25 }}
-                className="flex flex-wrap gap-6 text-muted-foreground"
-              >
-                <span className="flex items-center gap-2">
-                  <Calendar size={18} />
-                  {project.year}
-                </span>
-                <span className="flex items-center gap-2">
-                  <Clock size={18} />
-                  {project.duration}
-                </span>
-              </motion.div>
 
               {/* Tools & Skills */}
               <motion.div
