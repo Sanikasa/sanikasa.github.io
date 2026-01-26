@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GridPattern } from "@/components/ui/GridPattern";
-import { MapPin, GraduationCap, Camera, Plane, Youtube, Play } from "lucide-react";
+import { MapPin, GraduationCap, Plane, ImageIcon } from "lucide-react";
 
 const chapters = [
   {
@@ -12,6 +12,11 @@ const chapters = [
     icon: GraduationCap,
     content: `My journey started in the bustling heart of Mumbai at KC College, Churchgate. While I was diving deep into the world of debits and credits for my Bachelor's in Accounting, the vibrant streets of Churchgate were teaching me a different lesson. Being in the center of the city gave me a passport to explore—I found myself constantly looking past the spreadsheets to capture the world through a camera lens.`,
     accent: "from-amber-500/20 to-orange-500/20",
+    images: [
+      { id: 1, label: "KC College" },
+      { id: 2, label: "Churchgate Streets" },
+      { id: 3, label: "Mumbai Life" },
+    ],
   },
   {
     number: 2,
@@ -20,25 +25,12 @@ const chapters = [
     icon: Plane,
     content: `Seeking a global perspective, I moved to the USA for my Master's. This leap wasn't just about a degree; it was about exposure. A life-changing transition that pushed me beyond my comfort zone and opened doors to new experiences, cultures, and opportunities.`,
     accent: "from-blue-500/20 to-cyan-500/20",
+    images: [
+      { id: 1, label: "University at Buffalo" },
+      { id: 2, label: "Campus Life" },
+      { id: 3, label: "New Beginnings" },
+    ],
   },
-  {
-    number: 3,
-    title: "The Creative Journey",
-    location: "YouTube & Beyond",
-    icon: Camera,
-    content: `What started as clicking pictures and filming videos between classes turned into a passion for storytelling. I realized that while I value the precision of finance, I crave the connection of creativity. To document this life-changing transition and showcase my journey as an international student, I launched my YouTube channel. It's my space to merge my analytical background with my creative side, sharing the highs, the hurdles, and everything in between.`,
-    accent: "from-purple-500/20 to-pink-500/20",
-  },
-];
-
-// Placeholder YouTube video IDs - replace with actual video IDs
-const youtubeVideos = [
-  { id: "VIDEO_ID_1", title: "My Journey Begins" },
-  { id: "VIDEO_ID_2", title: "First Day in America" },
-  { id: "VIDEO_ID_3", title: "Campus Life" },
-  { id: "VIDEO_ID_4", title: "Cultural Experiences" },
-  { id: "VIDEO_ID_5", title: "Student Life Tips" },
-  { id: "VIDEO_ID_6", title: "Latest Adventure" },
 ];
 
 const AboutMe = () => {
@@ -85,49 +77,37 @@ const AboutMe = () => {
         {/* Chapter Timeline */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              {/* Timeline line */}
-              <div className="relative">
-                <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
-
-                {chapters.map((chapter, index) => (
-                  <motion.div
-                    key={chapter.number}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2 }}
-                    className={`relative mb-16 last:mb-0 ${
-                      index % 2 === 0 ? "md:pr-[55%]" : "md:pl-[55%] md:text-right"
+            <div className="max-w-6xl mx-auto">
+              {chapters.map((chapter, index) => (
+                <motion.div
+                  key={chapter.number}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="mb-24 last:mb-0"
+                >
+                  <div
+                    className={`grid lg:grid-cols-2 gap-12 items-center ${
+                      index % 2 !== 0 ? "lg:flex-row-reverse" : ""
                     }`}
                   >
-                    {/* Timeline dot */}
-                    <div
-                      className={`absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-accent border-4 border-background -translate-x-1/2 top-8`}
-                    />
-
-                    {/* Chapter card */}
+                    {/* Content Card */}
                     <motion.div
                       whileHover={{ y: -4 }}
-                      className={`ml-16 md:ml-0 p-8 rounded-2xl border border-border bg-card hover:border-accent/50 transition-all bg-gradient-to-br ${chapter.accent}`}
+                      className={`p-8 rounded-2xl border border-border bg-card hover:border-accent/50 transition-all bg-gradient-to-br ${chapter.accent} ${
+                        index % 2 !== 0 ? "lg:order-2" : ""
+                      }`}
                     >
                       {/* Chapter number */}
-                      <div
-                        className={`flex items-center gap-3 mb-4 ${
-                          index % 2 !== 0 ? "md:justify-end" : ""
-                        }`}
-                      >
+                      <div className="flex items-center gap-3 mb-4">
                         <span className="text-sm font-medium text-accent uppercase tracking-wider">
                           Chapter {chapter.number}
                         </span>
                       </div>
 
                       {/* Icon and title */}
-                      <div
-                        className={`flex items-center gap-4 mb-4 ${
-                          index % 2 !== 0 ? "md:flex-row-reverse" : ""
-                        }`}
-                      >
+                      <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
                           <chapter.icon size={24} className="text-accent" />
                         </div>
@@ -147,82 +127,37 @@ const AboutMe = () => {
                         {chapter.content}
                       </p>
                     </motion.div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* YouTube Channel Section */}
-        <section className="py-24 bg-card">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4">
-                Follow My Journey
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                My YouTube Channel
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Join me as I document my life as an international student—sharing the highs,
-                the hurdles, and everything in between.
-              </p>
-
-              {/* Subscribe CTA */}
-              <motion.a
-                href="https://youtube.com/@YourChannel"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg font-medium text-sm transition-all hover:bg-red-700"
-              >
-                <Youtube size={20} />
-                Subscribe on YouTube
-              </motion.a>
-            </motion.div>
-
-            {/* Video Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {youtubeVideos.map((video, index) => (
-                <motion.div
-                  key={video.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -4 }}
-                  className="group relative aspect-video rounded-xl overflow-hidden border border-border bg-muted"
-                >
-                  {/* Placeholder - Replace VIDEO_ID with actual YouTube video IDs */}
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-
-                  {/* Placeholder overlay (shown when no valid video ID) */}
-                  {video.id.startsWith("VIDEO_ID") && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-muted">
-                      <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                        <Play size={32} className="text-accent ml-1" />
-                      </div>
-                      <p className="text-sm text-muted-foreground font-medium">
-                        {video.title}
-                      </p>
-                      <p className="text-xs text-muted-foreground/60 mt-1">
-                        Video coming soon
-                      </p>
+                    {/* Image Grid Placeholder */}
+                    <div
+                      className={`grid grid-cols-2 gap-4 ${
+                        index % 2 !== 0 ? "lg:order-1" : ""
+                      }`}
+                    >
+                      {chapter.images.map((image, imgIndex) => (
+                        <motion.div
+                          key={image.id}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.3 + imgIndex * 0.1 }}
+                          className={`aspect-square rounded-xl border border-border bg-muted flex flex-col items-center justify-center gap-3 hover:border-accent/50 transition-all ${
+                            imgIndex === 0 ? "col-span-2" : ""
+                          }`}
+                        >
+                          <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                            <ImageIcon size={24} className="text-accent" />
+                          </div>
+                          <p className="text-sm text-muted-foreground font-medium">
+                            {image.label}
+                          </p>
+                          <p className="text-xs text-muted-foreground/60">
+                            Add image here
+                          </p>
+                        </motion.div>
+                      ))}
                     </div>
-                  )}
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -230,7 +165,7 @@ const AboutMe = () => {
         </section>
 
         {/* Closing Statement */}
-        <section className="py-24 bg-background">
+        <section className="py-24 bg-card">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
