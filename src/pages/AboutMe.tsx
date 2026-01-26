@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GridPattern } from "@/components/ui/GridPattern";
 import { MapPin, GraduationCap, Plane, Youtube, Play } from "lucide-react";
+import sanikaPhoto from "@/assets/sanika-photo.jpg";
 
 const chapters = [
   {
@@ -66,10 +67,25 @@ const AboutMe = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-xl text-muted-foreground max-w-2xl mx-auto"
+                className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
               >
                 I'm not just an accountant; I'm a storyteller navigating the globe.
               </motion.p>
+
+              {/* Profile Photo */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+                className="relative w-40 h-40 md:w-48 md:h-48 mx-auto"
+              >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 blur-xl" />
+                <img
+                  src={sanikaPhoto}
+                  alt="Sanika More"
+                  className="relative w-full h-full rounded-full object-cover border-4 border-accent/20 shadow-xl"
+                />
+              </motion.div>
             </div>
           </div>
         </section>
