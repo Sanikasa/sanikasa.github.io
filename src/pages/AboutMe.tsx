@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GridPattern } from "@/components/ui/GridPattern";
 import { MapPin, GraduationCap, Plane, Youtube, Play } from "lucide-react";
-import sanikaPhoto from "@/assets/sanika-photo.jpg";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const chapters = [
   {
@@ -85,9 +85,9 @@ const AboutMe = () => {
               >
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 blur-xl" />
                 <img
-                  src={sanikaPhoto}
-                  alt="Sanika More"
-                  className="relative w-full h-full rounded-full object-cover border-4 border-accent/20 shadow-xl"
+                  src={profilePhoto}
+                  alt="Profile photo"
+                  className="relative w-full h-full rounded-full object-cover object-top border-4 border-accent/20 shadow-xl"
                 />
               </motion.div>
             </div>
