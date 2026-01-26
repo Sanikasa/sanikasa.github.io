@@ -81,14 +81,16 @@ const AboutMe = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
-                className="relative w-48 md:w-64 lg:w-72 shrink-0"
+                className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 shrink-0"
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/30 to-accent/10 blur-xl" />
-                <img
-                  src={profilePhoto}
-                  alt="Profile photo"
-                  className="relative w-full h-auto rounded-2xl border-4 border-accent/20 shadow-xl"
-                />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 blur-xl" />
+                <div className="relative w-full h-full rounded-full border-4 border-accent/20 shadow-xl overflow-hidden bg-accent/5">
+                  <img
+                    src={profilePhoto}
+                    alt="Profile photo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </motion.div>
             </div>
             </div>
