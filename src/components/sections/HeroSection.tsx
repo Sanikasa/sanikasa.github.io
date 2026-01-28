@@ -279,14 +279,18 @@ export const HeroSection = () => {
             <AnimatedHeadline text="Sanika More" />
           </div>
 
-          {/* Value proposition */}
+          {/* Value proposition - clear within 5 seconds */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6"
           >
-            Financial Analyst
+            MS in Quantitative Finance & Fintech graduate specializing in{" "}
+            <span className="text-accent font-semibold">DCF Valuation</span>,{" "}
+            <span className="text-accent font-semibold">FP&A</span>, and{" "}
+            <span className="text-accent font-semibold">Portfolio Analytics</span>—driving 
+            measurable business impact through data-driven financial insights.
           </motion.p>
 
 
