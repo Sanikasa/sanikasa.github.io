@@ -1,13 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, TrendingUp, Briefcase, Target, ChevronRight } from "lucide-react";
+import { ArrowRight, BookOpen, TrendingUp, Briefcase, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import { TradingChartBackground, GeometricGradientBackground } from "@/components/ui/FinanceBackgrounds";
 const journeySteps = [{
   id: 1,
   icon: BookOpen,
   year: "2021-2024",
-  title: "Accounting Foundation",
+  title: "Fundamental Valuation Principles",
   description: "Earned a B.Com in Financial Accounting & Auditing from the University of Mumbai. Built expertise in financial statements, GAAP principles, and the language of business.",
   highlight: "Strong fundamentals in accounting",
   color: "from-purple to-purple/60",
@@ -30,15 +30,6 @@ const journeySteps = [{
   highlight: "Advanced modeling & analytics",
   color: "from-accent to-gold-dark",
   borderColor: "border-accent/30"
-}, {
-  id: 4,
-  icon: Target,
-  year: "Now",
-  title: "Building Impact",
-  description: "Applying FP&A and financial analysis expertise to drive strategic decisions through data. Combining quantitative skills with real-world financial insights.",
-  highlight: "Impact-driven mindset",
-  color: "from-burgundy to-burgundy/60",
-  borderColor: "border-burgundy/30"
 }];
 const TimelineStep = ({
   step,
@@ -100,7 +91,7 @@ const TimelineStep = ({
       </div>
 
       {/* Timeline center - visible on md+ */}
-      <div className="hidden md:flex flex-col items-center">
+      <div className="hidden md:flex flex-col items-center pt-8">
         {/* Icon node */}
         <motion.div initial={{
         scale: 0
@@ -234,7 +225,7 @@ export const AboutPreview = () => {
       }} viewport={{
         once: true
       }} className="text-center mt-16 md:mt-24">
-          <Link to="/about">
+          <Link to="/about" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <motion.button whileHover={{
             scale: 1.02
           }} whileTap={{
