@@ -293,30 +293,6 @@ export const HeroSection = () => {
             measurable business impact through data-driven financial insights.
           </motion.p>
 
-          {/* Key metrics strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.2 }}
-            className="flex flex-wrap items-center justify-center gap-6 mb-8"
-          >
-            {[
-              { value: "$334/share", label: "Home Depot Valuation" },
-              { value: "85%", label: "Process Time Saved" },
-              { value: "+52%", label: "Sharpe Ratio Improvement" },
-            ].map((metric, i) => (
-              <motion.div
-                key={metric.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.4 + i * 0.15 }}
-                className="text-center"
-              >
-                <div className="text-2xl font-bold text-accent">{metric.value}</div>
-                <div className="text-xs text-muted-foreground">{metric.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
 
 
           {/* CTA Buttons */}
