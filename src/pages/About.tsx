@@ -1,15 +1,8 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { GridPattern } from "@/components/ui/GridPattern";
-import { MapPin, GraduationCap, Plane, Youtube, Play, Code, Database, TrendingUp, BarChart3 } from "lucide-react";
-
-const stats = [
-  { value: 85, suffix: "%", label: "Time Saved via Automation" },
-  { value: 52, suffix: "%", label: "Sharpe Ratio Achieved" },
-  { value: 5, suffix: "", label: "Interactive Projects" },
-];
+import { GraduationCap, Youtube, Play, Code, Database, TrendingUp, BarChart3 } from "lucide-react";
 
 const competencies = [
   { icon: Code, name: "Python", description: "Pandas, NumPy, Data Analysis" },
@@ -28,25 +21,6 @@ const education = [
     degree: "B.Com in Financial Accounting & Auditing",
     school: "University of Mumbai, India",
     period: "Sept 2021 – May 2024",
-  },
-];
-
-const chapters = [
-  {
-    number: 1,
-    title: "Mumbai & Accounting",
-    location: "KC College, Churchgate",
-    icon: GraduationCap,
-    content: `My journey started in the bustling heart of Mumbai at KC College, Churchgate. While I was diving deep into the world of debits and credits for my Bachelor's in Accounting, the vibrant streets of Churchgate were teaching me a different lesson. Being in the center of the city gave me a passport to explore—I found myself constantly looking past the spreadsheets to capture the world through a camera lens.`,
-    accent: "from-amber-500/20 to-orange-500/20",
-  },
-  {
-    number: 2,
-    title: "The Move to the USA",
-    location: "University at Buffalo",
-    icon: Plane,
-    content: `Seeking a global perspective, I moved to the USA for my Master's. This leap wasn't just about a degree; it was about exposure. A life-changing transition that pushed me beyond my comfort zone and opened doors to new experiences, cultures, and opportunities.`,
-    accent: "from-blue-500/20 to-cyan-500/20",
   },
 ];
 
@@ -96,41 +70,6 @@ const About = () => {
               >
                 Sanika More | Quantitative Finance @ University at Buffalo | Digital Storyteller
               </motion.p>
-            </div>
-          </div>
-        </section>
-
-        {/* At a Glance Stats */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <span className="text-sm font-medium text-accent uppercase tracking-wider">
-                At a Glance
-              </span>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -4 }}
-                  className="p-8 rounded-2xl bg-card border border-border text-center hover:border-accent/50 transition-all"
-                >
-                  <div className="font-display text-4xl md:text-5xl font-bold text-accent mb-2">
-                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
@@ -205,89 +144,8 @@ const About = () => {
           </div>
         </section>
 
-        {/* Story Timeline */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4">
-                My Story
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
-                The Chapters of My Journey
-              </h2>
-            </motion.div>
-
-            <div className="max-w-4xl mx-auto">
-              {/* Timeline line */}
-              <div className="relative">
-                <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
-
-                {chapters.map((chapter, index) => (
-                  <motion.div
-                    key={chapter.number}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2 }}
-                    className={`relative mb-16 last:mb-0 ${
-                      index % 2 === 0 ? "md:pr-[55%]" : "md:pl-[55%] md:text-right"
-                    }`}
-                  >
-                    {/* Timeline dot */}
-                    <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-accent border-4 border-background -translate-x-1/2 top-8" />
-
-                    {/* Chapter card */}
-                    <motion.div
-                      whileHover={{ y: -4 }}
-                      className={`ml-16 md:ml-0 p-8 rounded-2xl border border-border bg-card hover:border-accent/50 transition-all bg-gradient-to-br ${chapter.accent}`}
-                    >
-                      <div
-                        className={`flex items-center gap-3 mb-4 ${
-                          index % 2 !== 0 ? "md:justify-end" : ""
-                        }`}
-                      >
-                        <span className="text-sm font-medium text-accent uppercase tracking-wider">
-                          Chapter {chapter.number}
-                        </span>
-                      </div>
-
-                      <div
-                        className={`flex items-center gap-4 mb-4 ${
-                          index % 2 !== 0 ? "md:flex-row-reverse" : ""
-                        }`}
-                      >
-                        <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                          <chapter.icon size={24} className="text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-display text-2xl font-bold">
-                            {chapter.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground flex items-center gap-1.5">
-                            <MapPin size={14} />
-                            {chapter.location}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="text-muted-foreground leading-relaxed">
-                        {chapter.content}
-                      </p>
-                    </motion.div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* YouTube Section */}
-        <section className="py-24 bg-card">
+        <section className="py-24 bg-background">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -359,7 +217,7 @@ const About = () => {
         </section>
 
         {/* Closing Quote */}
-        <section className="py-24 bg-background">
+        <section className="py-24 bg-card">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
