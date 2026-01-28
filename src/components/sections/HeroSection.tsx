@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, TrendingUp, BarChart3, PieChart, DollarSign } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { CandlestickChart, MiniLineChart, PieChartWidget, DataStream } from "@/components/ui/FinanceGraphics";
-
+import profilePhoto from "@/assets/profile-photo.jpg";
 // Animated data line component
 const DataLine = ({ delay, duration, startX, startY, endX, endY }: {
   delay: number;
@@ -274,8 +274,26 @@ export const HeroSection = () => {
         }}
       >
         <div className="max-w-5xl mx-auto text-center">
-          {/* Animated headline */}
-          <div className="mb-6">
+          {/* Name with Photo */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
+            {/* Profile Photo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: -20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="w-24 h-28 sm:w-28 sm:h-32 md:w-32 md:h-36 rounded-2xl overflow-hidden border-[3px] border-accent shadow-lg"
+                   style={{ boxShadow: "var(--shadow-gold)" }}>
+                <img 
+                  src={profilePhoto} 
+                  alt="Sanika More" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Animated headline */}
             <AnimatedHeadline text="Sanika More" />
           </div>
 
