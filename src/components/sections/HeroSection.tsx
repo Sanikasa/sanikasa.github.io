@@ -273,81 +273,81 @@ export const HeroSection = () => {
           rotateY,
         }}
       >
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Name with Photo */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
-            {/* Profile Photo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: -20 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="relative"
-            >
-              <div className="w-24 h-28 sm:w-28 sm:h-32 md:w-32 md:h-36 rounded-2xl overflow-hidden border-[3px] border-accent shadow-lg"
-                   style={{ boxShadow: "var(--shadow-gold)" }}>
-                <img 
-                  src={profilePhoto} 
-                  alt="Sanika More" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
-            
-            {/* Animated headline */}
-            <AnimatedHeadline text="Sanika More" />
-          </div>
-
-          {/* Value proposition - clear within 5 seconds */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6"
-          >
-            Financial Analyst specializing in{" "}
-            <span className="text-accent font-semibold">DCF Valuation</span>,{" "}
-            <span className="text-accent font-semibold">FP&A</span>, and{" "}
-            <span className="text-accent font-semibold">Portfolio Analytics</span>. Driving 
-            measurable business impact through data-driven financial insights.
-          </motion.p>
-
-
-
-          {/* CTA Buttons */}
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Profile Photo - 1/3 */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 2.0 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            initial={{ opacity: 0, scale: 0.8, x: -40 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="lg:w-1/3 flex justify-center"
           >
-            <Link to="/projects">
-              <motion.button
-                whileHover={{ scale: 1.03, boxShadow: "0 20px 40px -12px hsl(45 93% 47% / 0.4)" }}
-                whileTap={{ scale: 0.98 }}
-                className="group px-8 py-4 bg-accent text-accent-foreground rounded-xl font-semibold text-lg transition-all inline-flex items-center gap-3"
-                style={{ boxShadow: "var(--shadow-gold)" }}
-              >
-                View My Projects
-                <motion.span
-                  className="inline-block"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ArrowRight size={20} />
-                </motion.span>
-              </motion.button>
-            </Link>
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.03, backgroundColor: "hsl(var(--muted))" }}
-                whileTap={{ scale: 0.98 }}
-                className="group px-8 py-4 border-2 border-border rounded-xl font-semibold text-lg hover:border-accent/50 transition-all inline-flex items-center gap-3"
-              >
-                <Briefcase size={20} className="text-accent" />
-                Let's Connect
-              </motion.button>
-            </Link>
+            <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-accent shadow-2xl"
+                 style={{ boxShadow: "var(--shadow-gold)" }}>
+              <img 
+                src={profilePhoto} 
+                alt="Sanika More" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </motion.div>
+
+          {/* Content - 2/3 */}
+          <div className="lg:w-2/3 text-center lg:text-left">
+            {/* Animated headline */}
+            <div className="mb-6">
+              <AnimatedHeadline text="Sanika More" />
+            </div>
+
+            {/* Value proposition */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.8 }}
+              className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8"
+            >
+              Financial Analyst specializing in{" "}
+              <span className="text-accent font-semibold">DCF Valuation</span>,{" "}
+              <span className="text-accent font-semibold">FP&A</span>, and{" "}
+              <span className="text-accent font-semibold">Portfolio Analytics</span>. Driving 
+              measurable business impact through data-driven financial insights.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 1.2 }}
+              className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4"
+            >
+              <a href="/Sanika_More_Resume.pdf" download>
+                <motion.button
+                  whileHover={{ scale: 1.03, boxShadow: "0 20px 40px -12px hsl(45 93% 47% / 0.4)" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group px-8 py-4 bg-accent text-accent-foreground rounded-xl font-semibold text-lg transition-all inline-flex items-center gap-3"
+                  style={{ boxShadow: "var(--shadow-gold)" }}
+                >
+                  Download Resume
+                  <motion.span
+                    className="inline-block"
+                    animate={{ y: [0, 3, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRight size={20} className="rotate-90" />
+                  </motion.span>
+                </motion.button>
+              </a>
+              <Link to="/about">
+                <motion.button
+                  whileHover={{ scale: 1.03, backgroundColor: "hsl(var(--muted))" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group px-8 py-4 border-2 border-border rounded-xl font-semibold text-lg hover:border-accent/50 transition-all inline-flex items-center gap-3"
+                >
+                  Know More About Me
+                  <ArrowRight size={20} className="text-accent" />
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 
@@ -355,7 +355,7 @@ export const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.2 }}
+        transition={{ delay: 1.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
