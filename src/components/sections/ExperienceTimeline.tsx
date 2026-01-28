@@ -6,20 +6,20 @@ import { GeometricGradientBackground } from "@/components/ui/FinanceBackgrounds"
 
 const experiences = [
   {
-    period: "2023",
-    role: "Finance Intern",
-    company: "Mintskill HR Solutions",
-    description: "Performed variance analysis, built automated dashboards, improved forecast accuracy by 10%, and recovered 6-8% in excess vendor payments.",
-    current: true,
-    color: "bg-emerald border-emerald",
-  },
-  {
     period: "2024 - 2026",
     role: "MS Quantitative Finance & Fintech",
     company: "University at Buffalo",
     description: "Building DCF/FCFE models, portfolio optimization, fixed income analysis, and Python for finance.",
-    current: false,
+    current: true,
     color: "bg-purple border-purple",
+  },
+  {
+    period: "2023",
+    role: "Finance Intern",
+    company: "Mintskill HR Solutions",
+    description: "Performed variance analysis, built automated dashboards, improved forecast accuracy by 10%, and recovered 6-8% in excess vendor payments.",
+    current: false,
+    color: "bg-emerald border-emerald",
   },
   {
     period: "2021 - 2024",
