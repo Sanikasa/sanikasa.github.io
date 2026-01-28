@@ -1,50 +1,14 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GridPattern } from "@/components/ui/GridPattern";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { ProjectDetail } from "@/components/projects/ProjectDetail";
-import { ProjectFilters } from "@/components/projects/ProjectFilters";
-import { projects, allSkills, allTools, allIndustries, type Project } from "@/components/projects/ProjectData";
+import { projects, type Project } from "@/components/projects/ProjectData";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-  const [selectedTools, setSelectedTools] = useState<string[]>([]);
-  const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
-
-  const handleSkillToggle = (skill: string) => {
-    setSelectedSkills((prev) =>
-      prev.includes(skill) ? prev.filter((s) => s !== skill) : [...prev, skill]
-    );
-  };
-
-  const handleToolToggle = (tool: string) => {
-    setSelectedTools((prev) =>
-      prev.includes(tool) ? prev.filter((t) => t !== tool) : [...prev, tool]
-    );
-  };
-
-  const handleClearAll = () => {
-    setSelectedSkills([]);
-    setSelectedTools([]);
-    setSelectedIndustry(null);
-  };
-
-  const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesSkills =
-        selectedSkills.length === 0 ||
-        selectedSkills.some((skill) => project.skills.includes(skill));
-      const matchesTools =
-        selectedTools.length === 0 ||
-        selectedTools.some((tool) => project.tools.includes(tool));
-      const matchesIndustry =
-        !selectedIndustry || project.industry === selectedIndustry;
-      return matchesSkills && matchesTools && matchesIndustry;
-    });
-  }, [selectedSkills, selectedTools, selectedIndustry]);
 
   // Lock body scroll when project detail is open
   if (selectedProject) {
@@ -93,76 +57,22 @@ const Projects = () => {
           </div>
         </section>
 
-        {/* Filters & Projects */}
+        {/* Projects Grid */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-[320px_1fr] gap-8">
-              {/* Filters Sidebar */}
-              <div className="lg:sticky lg:top-24 lg:h-fit">
-                <ProjectFilters
-                  skills={allSkills}
-                  tools={allTools}
-                  industries={allIndustries}
-                  selectedSkills={selectedSkills}
-                  selectedTools={selectedTools}
-                  selectedIndustry={selectedIndustry}
-                  onSkillToggle={handleSkillToggle}
-                  onToolToggle={handleToolToggle}
-                  onIndustrySelect={setSelectedIndustry}
-                  onClearAll={handleClearAll}
+            <motion.div
+              layout
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={index}
+                  onClick={() => setSelectedProject(project)}
                 />
-
-                {/* Results count */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="mt-4 text-sm text-muted-foreground"
-                >
-                  Showing{" "}
-                  <span className="font-semibold text-foreground">
-                    {filteredProjects.length}
-                  </span>{" "}
-                  of {projects.length} projects
-                </motion.div>
-              </div>
-
-              {/* Projects Grid */}
-              <div>
-                <AnimatePresence mode="popLayout">
-                  {filteredProjects.length > 0 ? (
-                    <motion.div
-                      layout
-                      className="grid md:grid-cols-2 gap-6"
-                    >
-                      {filteredProjects.map((project, index) => (
-                        <ProjectCard
-                          key={project.id}
-                          project={project}
-                          index={index}
-                          onClick={() => setSelectedProject(project)}
-                        />
-                      ))}
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="text-center py-20"
-                    >
-                      <p className="text-xl text-muted-foreground mb-4">
-                        No projects match your filters
-                      </p>
-                      <button
-                        onClick={handleClearAll}
-                        className="text-accent hover:underline"
-                      >
-                        Clear all filters
-                      </button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </div>
+              ))}
+            </motion.div>
           </div>
         </section>
       </main>
