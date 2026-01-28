@@ -286,10 +286,10 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6"
           >
-            MS in Quantitative Finance & Fintech graduate specializing in{" "}
+            Financial Analyst specializing in{" "}
             <span className="text-accent font-semibold">DCF Valuation</span>,{" "}
             <span className="text-accent font-semibold">FP&A</span>, and{" "}
-            <span className="text-accent font-semibold">Portfolio Analytics</span>—driving 
+            <span className="text-accent font-semibold">Portfolio Analytics</span>. Driving 
             measurable business impact through data-driven financial insights.
           </motion.p>
 
