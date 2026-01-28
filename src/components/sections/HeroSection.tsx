@@ -246,15 +246,6 @@ export const HeroSection = () => {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
 
-      {/* Floating Finance Dashboard Widgets */}
-      <FloatingDashboard className="top-[15%] left-[5%]" />
-      <CandlestickWidget className="top-[20%] right-[3%]" />
-      <AllocationWidget className="bottom-[25%] left-[8%]" />
-
-      {/* Data Stream on right edge */}
-      <div className="absolute right-0 top-1/4 bottom-1/4 w-32 overflow-hidden opacity-30 hidden xl:block">
-        <DataStream />
-      </div>
 
       {/* Soft gradient orbs */}
       <motion.div
@@ -283,35 +274,9 @@ export const HeroSection = () => {
         }}
       >
         <div className="max-w-5xl mx-auto text-center">
-          {/* Eyebrow badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent/30 bg-accent/5 backdrop-blur-sm mb-8"
-          >
-            <motion.span 
-              className="w-2 h-2 rounded-full bg-accent"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <span className="text-sm font-medium text-accent">
-              Finance & Analytics Professional
-            </span>
-          </motion.div>
-
           {/* Animated headline */}
           <div className="mb-6">
-            <AnimatedHeadline text="Your Next" />
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              <span className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gradient-gold">
-                Financial Edge.
-              </span>
-            </motion.div>
+            <AnimatedHeadline text="Sanika More" />
           </div>
 
           {/* Value proposition - clear within 5 seconds */}
@@ -353,26 +318,6 @@ export const HeroSection = () => {
             ))}
           </motion.div>
 
-          {/* Subheadline with staggered reveal */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.6 }}
-            className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base text-muted-foreground mb-12"
-          >
-            {["MS Quantitative Finance & Fintech – UB", "DCF & FCFE Modeling", "Fixed Income", "Portfolio Optimization"].map((item, i) => (
-              <motion.span
-                key={item}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.8 + i * 0.1 }}
-                className="flex items-center"
-              >
-                {i > 0 && <span className="mr-2 sm:mr-4 text-accent">•</span>}
-                <span className="whitespace-nowrap font-medium">{item}</span>
-              </motion.span>
-            ))}
-          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
