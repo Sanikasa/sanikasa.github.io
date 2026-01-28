@@ -62,7 +62,8 @@ export const CTASection = () => {
           delay: 0.1
         }} className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">Ready to Bridge Financial Data and Strategic Action
 Insights to Your Team?<br />
-            <span className="text-gradient-gold">Financial Data and Strategic Action?</span>
+            <span className="text-gradient-gold">Ready to Bridge
+Financial Data and Strategic Action?</span>
           </motion.h2>
 
           <motion.p initial={{
